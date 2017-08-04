@@ -1,0 +1,7 @@
+# Ignore everything
+*
+# Except the following:
+!.gitignore
+!multisonar.brd
+!multisonar.sch
+!README.md
