@@ -142,14 +142,14 @@
 <plain>
 </plain>
 <instances>
-<instance part="J_ULTRASONIC_1" gate="J_ULTRASONIC" x="81.28" y="81.28" rot="R90"/>
-<instance part="J_ULTRASONIC_2" gate="J_ULTRASONIC" x="119.38" y="68.58" rot="R90"/>
-<instance part="J_ULTRASONIC_3" gate="J_ULTRASONIC" x="152.4" y="50.8" rot="R90"/>
-<instance part="J_ULTRASONIC_8" gate="J_ULTRASONIC" x="48.26" y="68.58" rot="R90"/>
-<instance part="J_ULTRASONIC_5" gate="J_ULTRASONIC" x="83.82" y="15.24" rot="R90"/>
-<instance part="J_ULTRASONIC_6" gate="J_ULTRASONIC" x="48.26" y="27.94" rot="R90"/>
-<instance part="J_ULTRASONIC_7" gate="J_ULTRASONIC" x="20.32" y="48.26" rot="R90"/>
-<instance part="J_ULTRASONIC_4" gate="J_ULTRASONIC" x="119.38" y="27.94" rot="R90"/>
+<instance part="J_ULTRASONIC_1" gate="J_ULTRASONIC" x="83.82" y="91.44" rot="R90"/>
+<instance part="J_ULTRASONIC_2" gate="J_ULTRASONIC" x="119.38" y="76.2" rot="R90"/>
+<instance part="J_ULTRASONIC_3" gate="J_ULTRASONIC" x="152.4" y="45.72"/>
+<instance part="J_ULTRASONIC_8" gate="J_ULTRASONIC" x="48.26" y="76.2" rot="R90"/>
+<instance part="J_ULTRASONIC_5" gate="J_ULTRASONIC" x="83.82" y="0" rot="R270"/>
+<instance part="J_ULTRASONIC_6" gate="J_ULTRASONIC" x="48.26" y="17.78" rot="R270"/>
+<instance part="J_ULTRASONIC_7" gate="J_ULTRASONIC" x="17.78" y="45.72" rot="R180"/>
+<instance part="J_ULTRASONIC_4" gate="J_ULTRASONIC" x="119.38" y="17.78" rot="R270"/>
 </instances>
 <busses>
 </busses>
