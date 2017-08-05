@@ -1968,6 +1968,159 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 </package>
+<package name="2X3">
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="1.905" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="4.445" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="5.715" y1="-1.27" x2="6.35" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="3.175" x2="-0.635" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="3.81" x2="0.635" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="3.81" x2="1.27" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="3.175" x2="1.905" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="3.81" x2="3.175" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="3.81" x2="3.81" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.175" x2="4.445" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="4.445" y1="3.81" x2="5.715" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="5.715" y1="3.81" x2="6.35" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="3.175" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.175" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="3.175" x2="6.35" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="4.445" y1="-1.27" x2="5.715" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.605" x2="-0.635" y2="-1.605" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="2" x="0" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="3" x="2.54" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="4" x="2.54" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="5" x="5.08" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="6" x="5.08" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
+<text x="-1.27" y="4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<rectangle x1="-0.254" y1="2.286" x2="0.254" y2="2.794" layer="51"/>
+<rectangle x1="2.286" y1="2.286" x2="2.794" y2="2.794" layer="51"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+<rectangle x1="4.826" y1="2.286" x2="5.334" y2="2.794" layer="51"/>
+<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
+</package>
+<package name="2X3-NS">
+<wire x1="-3.81" y1="-1.905" x2="-3.175" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="-1.905" y1="-2.54" x2="-1.27" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="-1.27" y1="-1.905" x2="-0.635" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="0.635" y1="-2.54" x2="1.27" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="1.27" y1="-1.905" x2="1.905" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="3.175" y1="-2.54" x2="3.81" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="-3.81" y1="-1.905" x2="-3.81" y2="1.905" width="0.2032" layer="51"/>
+<wire x1="-3.81" y1="1.905" x2="-3.175" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="-3.175" y1="2.54" x2="-1.905" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="-1.905" y1="2.54" x2="-1.27" y2="1.905" width="0.2032" layer="51"/>
+<wire x1="-1.27" y1="1.905" x2="-0.635" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="-0.635" y1="2.54" x2="0.635" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="0.635" y1="2.54" x2="1.27" y2="1.905" width="0.2032" layer="51"/>
+<wire x1="1.27" y1="1.905" x2="1.905" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="1.905" y1="2.54" x2="3.175" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="3.175" y1="2.54" x2="3.81" y2="1.905" width="0.2032" layer="51"/>
+<wire x1="-1.27" y1="1.905" x2="-1.27" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="1.27" y1="1.905" x2="1.27" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="3.81" y1="1.905" x2="3.81" y2="-1.905" width="0.2032" layer="51"/>
+<wire x1="1.905" y1="-2.54" x2="3.175" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="-0.635" y1="-2.54" x2="0.635" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="-3.175" y1="-2.54" x2="-1.905" y2="-2.54" width="0.2032" layer="51"/>
+<wire x1="-1.905" y1="-2.875" x2="-3.175" y2="-2.875" width="0.2032" layer="51"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.016" diameter="1.8796" shape="square"/>
+<pad name="2" x="-2.54" y="1.27" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="3" x="0" y="-1.27" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="4" x="0" y="1.27" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="5" x="2.54" y="-1.27" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="6" x="2.54" y="1.27" drill="1.016" diameter="1.8796" shape="octagon"/>
+<text x="-3.81" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.81" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-2.794" y1="-1.524" x2="-2.286" y2="-1.016" layer="51"/>
+<rectangle x1="-2.794" y1="1.016" x2="-2.286" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51"/>
+<rectangle x1="2.286" y1="1.016" x2="2.794" y2="1.524" layer="51"/>
+<rectangle x1="2.286" y1="-1.524" x2="2.794" y2="-1.016" layer="51"/>
+</package>
+<package name="2X3_OFFSET">
+<wire x1="-3.81" y1="-1.905" x2="-3.81" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="1.905" x2="-1.27" y2="-1.905" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="1.905" x2="1.27" y2="-1.905" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="1.905" x2="3.81" y2="-1.905" width="0.2032" layer="21"/>
+<wire x1="-1.905" y1="-4.78" x2="-3.175" y2="-4.78" width="0.2032" layer="21"/>
+<pad name="1" x="-2.54" y="-1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R270"/>
+<pad name="2" x="-2.54" y="1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R90"/>
+<pad name="3" x="0" y="-1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R270"/>
+<pad name="4" x="0" y="1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R90"/>
+<pad name="5" x="2.54" y="-1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R270"/>
+<pad name="6" x="2.54" y="1.27" drill="1.1176" diameter="1.8796" shape="offset" rot="R90"/>
+<text x="-4.445" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="5.715" y="-3.175" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.794" y1="-1.524" x2="-2.286" y2="-1.016" layer="51"/>
+<rectangle x1="-2.794" y1="1.016" x2="-2.286" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51"/>
+<rectangle x1="2.286" y1="1.016" x2="2.794" y2="1.524" layer="51"/>
+<rectangle x1="2.286" y1="-1.524" x2="2.794" y2="-1.016" layer="51"/>
+</package>
+<package name="2X3_LOCK">
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="1.905" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="4.445" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="5.715" y1="-1.27" x2="6.35" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="-1.27" y1="3.175" x2="-0.635" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="3.81" x2="0.635" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="3.81" x2="1.27" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="3.175" x2="1.905" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="3.81" x2="3.175" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="3.81" x2="3.81" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.175" x2="4.445" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="4.445" y1="3.81" x2="5.715" y2="3.81" width="0.2032" layer="21"/>
+<wire x1="5.715" y1="3.81" x2="6.35" y2="3.175" width="0.2032" layer="21"/>
+<wire x1="1.27" y1="3.175" x2="1.27" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.175" x2="3.81" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="3.175" x2="6.35" y2="-0.635" width="0.2032" layer="21"/>
+<wire x1="4.445" y1="-1.27" x2="5.715" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="3.175" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="0.635" y1="-1.605" x2="-0.635" y2="-1.605" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="2" x="0" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="3" x="2.54" y="-0.254" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="4" x="2.54" y="2.286" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="5" x="5.08" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="6" x="5.08" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
+<text x="-1.27" y="4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<rectangle x1="-0.254" y1="2.286" x2="0.254" y2="2.794" layer="51"/>
+<rectangle x1="2.286" y1="2.286" x2="2.794" y2="2.794" layer="51"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+<rectangle x1="4.826" y1="2.286" x2="5.334" y2="2.794" layer="51"/>
+<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
+</package>
+<package name="2X3_TEST_POINTS">
+<pad name="1" x="-2.54" y="-1.27" drill="0.508" stop="no"/>
+<pad name="2" x="-2.54" y="1.27" drill="0.508" stop="no"/>
+<pad name="3" x="0" y="-1.27" drill="0.508" stop="no"/>
+<pad name="4" x="0" y="1.27" drill="0.508" stop="no"/>
+<pad name="5" x="2.54" y="-1.27" drill="0.508" stop="no"/>
+<pad name="6" x="2.54" y="1.27" drill="0.508" stop="no"/>
+<wire x1="-2.8956" y1="-2.0574" x2="-2.2098" y2="-2.0574" width="0.2032" layer="21"/>
+<circle x="-2.54" y="1.27" radius="0.61065625" width="0" layer="29"/>
+<circle x="0" y="1.27" radius="0.61065625" width="0" layer="29"/>
+<circle x="2.54" y="1.27" radius="0.61065625" width="0" layer="29"/>
+<circle x="-2.54" y="-1.27" radius="0.61065625" width="0" layer="29"/>
+<circle x="0" y="-1.27" radius="0.61065625" width="0" layer="29"/>
+<circle x="2.54" y="-1.27" radius="0.61065625" width="0" layer="29"/>
+</package>
 </packages>
 <symbols>
 <symbol name="M04">
@@ -1985,6 +2138,26 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <pin name="2" x="5.08" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="3" x="5.08" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="4" x="5.08" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="AVR_SPI_PROGRAMMER_6">
+<wire x1="-5.08" y1="-5.08" x2="7.62" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-5.08" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
+<text x="-4.318" y="5.842" size="1.778" layer="95">&gt;NAME</text>
+<text x="-4.064" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<text x="8.89" y="0.635" size="1.27" layer="94">MOSI</text>
+<text x="-11.938" y="-2.032" size="1.27" layer="94">RESET</text>
+<text x="-11.938" y="0.508" size="1.27" layer="94">SCK</text>
+<text x="-11.938" y="3.302" size="1.27" layer="94">MISO</text>
+<text x="8.89" y="3.048" size="1.27" layer="94">+5</text>
+<text x="8.89" y="-2.032" size="1.27" layer="94">GND</text>
+<pin name="1" x="-7.62" y="2.54" visible="pad" direction="pas" function="dot"/>
+<pin name="2" x="10.16" y="2.54" visible="pad" direction="pas" function="dot" rot="R180"/>
+<pin name="3" x="-7.62" y="0" visible="pad" direction="pas" function="dot"/>
+<pin name="4" x="10.16" y="0" visible="pad" direction="pas" function="dot" rot="R180"/>
+<pin name="5" x="-7.62" y="-2.54" visible="pad" direction="pas" function="dot"/>
+<pin name="6" x="10.16" y="-2.54" visible="pad" direction="pas" function="dot" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2213,6 +2386,82 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </device>
 </devices>
 </deviceset>
+<deviceset name="AVR_SPI_PRG_6" prefix="JP">
+<description>&lt;b&gt;AVR ISP 6 Pin&lt;/b&gt;
+This is the reduced ISP connector for AVR programming. Common on Arduino. This footprint will take up less PCB space and can be used with a 10-pin to 6-pin adapter such as SKU: BOB-08508
+
+&lt;b&gt;**Special note about "TEST_POINT" package.&lt;/b&gt; The stop mask is on the top side, so if you want your programming test points to be on the bottom of your board, make sure to place this package on the bottom side of the board. This also ensure that the orientation to program from the bottom side will be correct.</description>
+<gates>
+<gate name="G$1" symbol="AVR_SPI_PROGRAMMER_6" x="0" y="0"/>
+</gates>
+<devices>
+<device name="PTH" package="2X3">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="NS" package="2X3-NS">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="OFFSET_PADS" package="2X3_OFFSET">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2X3_LOCK" package="2X3_LOCK">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TESTPOINTS" package="2X3_TEST_POINTS">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -2225,14 +2474,14 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </class>
 </classes>
 <parts>
+<part name="ULTRASONIC_0" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
 <part name="ULTRASONIC_1" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
 <part name="ULTRASONIC_2" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
-<part name="ULTRASONIC_3" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
-<part name="ULTRASONIC_8" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
-<part name="ULTRASONIC_5" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
-<part name="ULTRASONIC_6" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
 <part name="ULTRASONIC_7" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
 <part name="ULTRASONIC_4" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
+<part name="ULTRASONIC_5" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
+<part name="ULTRASONIC_6" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
+<part name="ULTRASONIC_3" library="Ultrasonic Sensor HC-SR04" deviceset="HC-SR04" device=""/>
 <part name="IC1" library="atmega328" deviceset="ATMEGA328*P" device="" technology="-20"/>
 <part name="Y1" library="Seeed-OPL-Crystal-Oscillator" deviceset="DIP-CRYSTAL-16MHZ-18PF-30PPM-40R(HC49US)" device="" value="16MHZ"/>
 <part name="C1" library="Seeed-OPL-Capacitor" deviceset="DIP-CERAMIC-22PF-100V-5%-NPO(D5.0MM)" device="" value="22pf"/>
@@ -2264,20 +2513,38 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="J1" library="SparkFun-Boards" deviceset="ARDUINO_R3_SHIELD" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
+<part name="JP2" library="SparkFun-Connectors" deviceset="AVR_SPI_PRG_6" device="2X3_LOCK" value="ICSP"/>
+<part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY13" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY16" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="SUPPLY17" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="ULTRASONIC_1" gate="J_ULTRASONIC" x="83.82" y="104.14" rot="R90"/>
-<instance part="ULTRASONIC_2" gate="J_ULTRASONIC" x="119.38" y="88.9" rot="R90"/>
-<instance part="ULTRASONIC_3" gate="J_ULTRASONIC" x="152.4" y="45.72"/>
-<instance part="ULTRASONIC_8" gate="J_ULTRASONIC" x="48.26" y="88.9" rot="R90"/>
-<instance part="ULTRASONIC_5" gate="J_ULTRASONIC" x="88.9" y="-12.7" rot="R270"/>
-<instance part="ULTRASONIC_6" gate="J_ULTRASONIC" x="53.34" y="5.08" rot="R270"/>
-<instance part="ULTRASONIC_7" gate="J_ULTRASONIC" x="17.78" y="45.72" rot="R180"/>
-<instance part="ULTRASONIC_4" gate="J_ULTRASONIC" x="124.46" y="5.08" rot="R270"/>
+<instance part="ULTRASONIC_0" gate="J_ULTRASONIC" x="83.82" y="104.14" rot="R90"/>
+<instance part="ULTRASONIC_1" gate="J_ULTRASONIC" x="119.38" y="88.9" rot="R90"/>
+<instance part="ULTRASONIC_2" gate="J_ULTRASONIC" x="152.4" y="45.72"/>
+<instance part="ULTRASONIC_7" gate="J_ULTRASONIC" x="48.26" y="88.9" rot="R90"/>
+<instance part="ULTRASONIC_4" gate="J_ULTRASONIC" x="88.9" y="-12.7" rot="R270"/>
+<instance part="ULTRASONIC_5" gate="J_ULTRASONIC" x="53.34" y="5.08" rot="R270"/>
+<instance part="ULTRASONIC_6" gate="J_ULTRASONIC" x="17.78" y="45.72" rot="R180"/>
+<instance part="ULTRASONIC_3" gate="J_ULTRASONIC" x="124.46" y="5.08" rot="R270"/>
 <instance part="IC1" gate="G$1" x="-58.42" y="78.74"/>
 <instance part="Y1" gate="G$1" x="-96.52" y="86.36" rot="R90"/>
 <instance part="C1" gate="G$1" x="-104.14" y="91.44" rot="R180"/>
@@ -2309,6 +2576,24 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="J1" gate="G$1" x="-101.6" y="33.02"/>
 <instance part="SUPPLY9" gate="G$1" x="-121.92" y="22.86" rot="R90"/>
 <instance part="JP1" gate="G$1" x="15.24" y="116.84" rot="R270"/>
+<instance part="JP2" gate="G$1" x="7.62" y="7.62"/>
+<instance part="SUPPLY10" gate="G$1" x="55.88" y="76.2" rot="R180"/>
+<instance part="SUPPLY11" gate="G$1" x="30.48" y="53.34" rot="R270"/>
+<instance part="SUPPLY12" gate="G$1" x="45.72" y="17.78"/>
+<instance part="SUPPLY13" gate="G$1" x="81.28" y="0"/>
+<instance part="SUPPLY14" gate="G$1" x="116.84" y="17.78"/>
+<instance part="SUPPLY15" gate="G$1" x="139.7" y="38.1" rot="R90"/>
+<instance part="SUPPLY16" gate="G$1" x="127" y="76.2" rot="R180"/>
+<instance part="SUPPLY17" gate="G$1" x="91.44" y="91.44" rot="R180"/>
+<instance part="GND10" gate="1" x="33.02" y="38.1" rot="R90"/>
+<instance part="GND11" gate="1" x="40.64" y="73.66"/>
+<instance part="GND12" gate="1" x="76.2" y="88.9"/>
+<instance part="GND13" gate="1" x="111.76" y="73.66"/>
+<instance part="GND14" gate="1" x="96.52" y="2.54" rot="R180"/>
+<instance part="GND15" gate="1" x="60.96" y="20.32" rot="R180"/>
+<instance part="GND16" gate="1" x="132.08" y="20.32" rot="R180"/>
+<instance part="GND17" gate="1" x="137.16" y="53.34" rot="R270"/>
+<instance part="JP3" gate="G$1" x="45.72" y="116.84" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -2360,6 +2645,48 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="JP1" gate="G$1" pin="4"/>
 <wire x1="20.32" y1="111.76" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
 <label x="20.32" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY12" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY13" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY14" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY16" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="5V"/>
+<pinref part="SUPPLY17" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="2"/>
+<wire x1="17.78" y1="10.16" x2="22.86" y2="10.16" width="0.1524" layer="91"/>
+<label x="22.86" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="4"/>
+<wire x1="50.8" y1="111.76" x2="50.8" y2="106.68" width="0.1524" layer="91"/>
+<label x="50.8" y="101.6" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -2417,6 +2744,48 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="JP1" gate="G$1" pin="1"/>
 <wire x1="12.7" y1="111.76" x2="12.7" y2="106.68" width="0.1524" layer="91"/>
 <label x="12.7" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND10" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND16" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="GND"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="6"/>
+<wire x1="17.78" y1="5.08" x2="22.86" y2="5.08" width="0.1524" layer="91"/>
+<label x="22.86" y="5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="111.76" x2="43.18" y2="106.68" width="0.1524" layer="91"/>
+<label x="43.18" y="101.6" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -2481,7 +2850,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <label x="17.78" y="101.6" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="RST" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-88.9" y1="109.22" x2="-88.9" y2="106.68" width="0.1524" layer="91"/>
@@ -2492,6 +2861,240 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <wire x1="-91.44" y1="109.22" x2="-91.44" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="106.68" x2="-88.9" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-88.9" y="106.68"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="5"/>
+<wire x1="0" y1="5.08" x2="-7.62" y2="5.08" width="0.1524" layer="91"/>
+<label x="-12.7" y="5.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC0" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI8/ADC0)PC0"/>
+<wire x1="-25.4" y1="106.68" x2="-20.32" y2="106.68" width="0.1524" layer="91"/>
+<label x="-20.32" y="106.68" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="81.28" y1="91.44" x2="81.28" y2="83.82" width="0.1524" layer="91"/>
+<label x="81.28" y="78.74" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PC1" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI9/ADC1)PC1"/>
+<wire x1="-25.4" y1="104.14" x2="-20.32" y2="104.14" width="0.1524" layer="91"/>
+<label x="-20.32" y="104.14" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="86.36" y1="91.44" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
+<label x="86.36" y="78.74" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PC2" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI10/ADC2)PC2"/>
+<wire x1="-25.4" y1="101.6" x2="-20.32" y2="101.6" width="0.1524" layer="91"/>
+<label x="-20.32" y="101.6" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="116.84" y1="76.2" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
+<label x="116.84" y="66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PC3" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI11/ADC3)PC3"/>
+<wire x1="-25.4" y1="99.06" x2="-20.32" y2="99.06" width="0.1524" layer="91"/>
+<label x="-20.32" y="99.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="121.92" y1="76.2" x2="121.92" y2="71.12" width="0.1524" layer="91"/>
+<label x="121.92" y="66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PD2" class="0">
+<segment>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="139.7" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
+<label x="134.62" y="48.26" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI18/INT0)PD2"/>
+<wire x1="-25.4" y1="76.2" x2="-20.32" y2="76.2" width="0.1524" layer="91"/>
+<label x="-20.32" y="76.2" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD3" class="0">
+<segment>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="139.7" y1="43.18" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
+<label x="134.62" y="43.18" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI19/INT1/OC2B)PD3"/>
+<wire x1="-25.4" y1="73.66" x2="-20.32" y2="73.66" width="0.1524" layer="91"/>
+<label x="-20.32" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD4" class="0">
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="127" y1="17.78" x2="127" y2="25.4" width="0.1524" layer="91"/>
+<label x="127" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI20/XCK/T0)PD4"/>
+<wire x1="-25.4" y1="71.12" x2="-20.32" y2="71.12" width="0.1524" layer="91"/>
+<label x="-20.32" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD5" class="0">
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="121.92" y1="17.78" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
+<label x="121.92" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI21/T1/OC0B)PD5"/>
+<wire x1="-25.4" y1="68.58" x2="-20.32" y2="68.58" width="0.1524" layer="91"/>
+<label x="-20.32" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD6" class="0">
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="91.44" y1="0" x2="91.44" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI22/AIN0OC0A)PD6"/>
+<wire x1="-25.4" y1="66.04" x2="-20.32" y2="66.04" width="0.1524" layer="91"/>
+<label x="-20.32" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD7" class="0">
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="86.36" y1="0" x2="86.36" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI23/AIN1)PD7"/>
+<wire x1="-25.4" y1="63.5" x2="-20.32" y2="63.5" width="0.1524" layer="91"/>
+<label x="-20.32" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB0" class="0">
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="55.88" y1="17.78" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
+<label x="55.88" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI0/ICP/CLKO)PB0"/>
+<wire x1="-25.4" y1="58.42" x2="-20.32" y2="58.42" width="0.1524" layer="91"/>
+<label x="-20.32" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB1" class="0">
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="50.8" y1="17.78" x2="50.8" y2="25.4" width="0.1524" layer="91"/>
+<label x="50.8" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI1/OC1A/OC1S)PB1"/>
+<wire x1="-25.4" y1="55.88" x2="-20.32" y2="55.88" width="0.1524" layer="91"/>
+<label x="-20.32" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB2" class="0">
+<segment>
+<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="30.48" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
+<label x="38.1" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI2/SS/OC1B)PB2"/>
+<wire x1="-25.4" y1="53.34" x2="-20.32" y2="53.34" width="0.1524" layer="91"/>
+<label x="-20.32" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB3" class="0">
+<segment>
+<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="30.48" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
+<label x="38.1" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI3/MOSI/OC2A)PB3"/>
+<wire x1="-25.4" y1="50.8" x2="-20.32" y2="50.8" width="0.1524" layer="91"/>
+<label x="-20.32" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="4"/>
+<wire x1="17.78" y1="7.62" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+<label x="22.86" y="7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB4" class="0">
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="45.72" y1="76.2" x2="45.72" y2="68.58" width="0.1524" layer="91"/>
+<label x="45.72" y="63.5" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI4/MISO)PB4"/>
+<wire x1="-25.4" y1="48.26" x2="-20.32" y2="48.26" width="0.1524" layer="91"/>
+<label x="-20.32" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="0" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
+<label x="-12.7" y="10.16" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB5" class="0">
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="50.8" y1="76.2" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
+<label x="50.8" y="63.5" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI5/SCK)PB5"/>
+<wire x1="-25.4" y1="45.72" x2="-20.32" y2="45.72" width="0.1524" layer="91"/>
+<label x="-20.32" y="45.72" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="3"/>
+<wire x1="0" y1="7.62" x2="-7.62" y2="7.62" width="0.1524" layer="91"/>
+<label x="-12.7" y="7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RX" class="0">
+<segment>
+<pinref part="JP3" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="111.76" x2="45.72" y2="106.68" width="0.1524" layer="91"/>
+<label x="45.72" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI16/RXD)PD0"/>
+<wire x1="-25.4" y1="81.28" x2="-20.32" y2="81.28" width="0.1524" layer="91"/>
+<label x="-20.32" y="81.28" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TX" class="0">
+<segment>
+<pinref part="JP3" gate="G$1" pin="3"/>
+<wire x1="48.26" y1="111.76" x2="48.26" y2="106.68" width="0.1524" layer="91"/>
+<label x="48.26" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI17/TXD)PD1"/>
+<wire x1="-25.4" y1="78.74" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
+<label x="-20.32" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
