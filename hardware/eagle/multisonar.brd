@@ -198,7 +198,7 @@
 <hole x="122.5" y="32.5" drill="3"/>
 <hole x="122.5" y="67.5" drill="3"/>
 <hole x="42.5" y="67.5" drill="3"/>
-<text x="80.34" y="70.71" size="1.016" layer="21" font="vector" rot="R90">IRQ</text>
+<text x="80.34" y="70.71" size="1.016" layer="21" font="vector" rot="R90">INT</text>
 </plain>
 <libraries>
 <library name="Ultrasonic Sensor HC-SR04">
@@ -1630,7 +1630,7 @@ design rules under a new name.</description>
 <wire x1="110.88" y1="47.52" x2="109.56" y2="46.2" width="0.6096" layer="1"/>
 <wire x1="111.87" y1="73.92" x2="110.88" y2="72.93" width="0.6096" layer="1"/>
 </signal>
-<signal name="RX/IRQ">
+<signal name="RX/INT">
 <contactref element="UART" pad="2"/>
 <contactref element="IC1" pad="2"/>
 <wire x1="78.69" y1="63.97" x2="76.73" y2="63.97" width="0.6096" layer="1"/>

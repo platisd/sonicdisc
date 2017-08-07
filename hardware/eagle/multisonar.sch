@@ -3784,7 +3784,7 @@ http://www.vishay.com/docs/88751/88751.pdf</description>
 <label x="134.62" y="43.18" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="RX/IRQ" class="0">
+<net name="RX/INT" class="0">
 <segment>
 <pinref part="UART" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="111.76" x2="45.72" y2="106.68" width="0.1524" layer="91"/>
