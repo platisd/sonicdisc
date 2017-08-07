@@ -1,14 +1,16 @@
 #include "SonicSensor.h"
 
+// The Sonic Disc pin mapping of sensors
+// Sonic Sensors are defined as SonicSensor(trigger pin, echo pin)
 SonicSensor sensors[] = {
-    SonicSensor(PC3, PC2), // Ultrasonic_0 on the Sonic Disc
-    SonicSensor(PC1, PC0), // Ultrasonic_1
-    SonicSensor(PB5, PB4), // Ultrasonic_2
-    SonicSensor(PB3, PB2), // Ultrasonic_3
-    SonicSensor(PB0, PB1), // Ultrasonic_4
-    SonicSensor(PD7, PD6), // Ultrasonic_5
-    SonicSensor(PD4, PD5), // Ultrasonic_6
-    SonicSensor(PD3, PD2)  // Ultrasonic_7
+    SonicSensor(A3, A2),  // Ultrasonic_0 on the Sonic Disc
+    SonicSensor(A1, A0),  // Ultrasonic_1
+    SonicSensor(13, 12),  // Ultrasonic_2
+    SonicSensor(11, 10),  // Ultrasonic_3
+    SonicSensor(8, 9),    // Ultrasonic_4
+    SonicSensor(7, 6),    // Ultrasonic_5
+    SonicSensor(4, 5),    // Ultrasonic_6
+    SonicSensor(3, 2)     // Ultrasonic_7
 };
 
 /**
