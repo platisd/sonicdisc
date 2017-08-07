@@ -565,7 +565,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
-<package name="AXIAL-0.3">
+<package name="AXIAL-0.3@1">
 <wire x1="-2.54" y1="0.762" x2="2.54" y2="0.762" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="0.762" x2="2.54" y2="0" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="0" x2="2.54" y2="-0.762" width="0.2032" layer="21"/>
@@ -599,7 +599,7 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <circle x="-3.81" y="0" radius="1.02390625" width="0" layer="30"/>
 <circle x="3.81" y="0" radius="1.04726875" width="0" layer="30"/>
 </package>
-<package name="AXIAL-0.1">
+<package name="AXIAL-0.1@1">
 <wire x1="1.27" y1="-0.762" x2="1.27" y2="0" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="0" x2="1.27" y2="0.762" width="0.2032" layer="21"/>
 <wire x1="1.524" y1="0" x2="1.27" y2="0" width="0.2032" layer="21"/>
@@ -624,9 +624,129 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <circle x="0" y="0" radius="0.4572" width="0" layer="29"/>
 <circle x="2.54" y="0" radius="0.4572" width="0" layer="29"/>
 </package>
+<package name="1206">
+<description>&lt;p&gt;&lt;b&gt;Generic 3216 (1206) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-2.4" y1="1.1" x2="2.4" y2="1.1" width="0.0508" layer="39"/>
+<wire x1="2.4" y1="-1.1" x2="-2.4" y2="-1.1" width="0.0508" layer="39"/>
+<wire x1="-2.4" y1="-1.1" x2="-2.4" y2="1.1" width="0.0508" layer="39"/>
+<wire x1="2.4" y1="1.1" x2="2.4" y2="-1.1" width="0.0508" layer="39"/>
+<wire x1="-0.965" y1="0.787" x2="0.965" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="-0.965" y1="-0.787" x2="0.965" y2="-0.787" width="0.1016" layer="51"/>
+<smd name="1" x="-1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<smd name="2" x="1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<text x="0" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.143" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<rectangle x1="-1.7018" y1="-0.8509" x2="-0.9517" y2="0.8491" layer="51"/>
+<rectangle x1="0.9517" y1="-0.8491" x2="1.7018" y2="0.8509" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
+<package name="AXIAL-0.3">
+<description>&lt;h3&gt;AXIAL-0.3&lt;/h3&gt;
+&lt;p&gt;Commonly used for 1/4W through-hole resistors. 0.3" pitch between holes.&lt;/p&gt;</description>
+<wire x1="-2.54" y1="0.762" x2="2.54" y2="0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0.762" x2="2.54" y2="0" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="-0.762" x2="-2.54" y2="-0.762" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="-0.762" x2="-2.54" y2="0" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.794" y2="0" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.794" y2="0" width="0.2032" layer="21"/>
+<pad name="P$1" x="-3.81" y="0" drill="0.9" diameter="1.8796"/>
+<pad name="P$2" x="3.81" y="0" drill="0.9" diameter="1.8796"/>
+<text x="0" y="1.016" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
+<text x="0" y="-1.016" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
+</package>
+<package name="AXIAL-0.3-KIT">
+<description>&lt;h3&gt;AXIAL-0.3-KIT&lt;/h3&gt;
+&lt;p&gt;Commonly used for 1/4W through-hole resistors. 0.3" pitch between holes.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Warning:&lt;/b&gt; This is the KIT version of the AXIAL-0.3 package. This package has a smaller diameter top stop mask, which doesn't cover the diameter of the pad. This means only the bottom side of the pads' copper will be exposed. You'll only be able to solder to the bottom side.&lt;/p&gt;</description>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="0" width="0.254" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="-2.54" y2="0" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.794" y2="0" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.794" y2="0" width="0.254" layer="21"/>
+<pad name="P$1" x="-3.81" y="0" drill="1.016" diameter="2.032" stop="no"/>
+<pad name="P$2" x="3.81" y="0" drill="1.016" diameter="2.032" stop="no"/>
+<text x="0" y="1.524" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.524" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<polygon width="0.127" layer="30">
+<vertex x="3.8201" y="-0.9449" curve="-90"/>
+<vertex x="2.8652" y="-0.0152" curve="-90.011749"/>
+<vertex x="3.8176" y="0.9602" curve="-90"/>
+<vertex x="4.7676" y="-0.0178" curve="-90.024193"/>
+</polygon>
+<polygon width="0.127" layer="29">
+<vertex x="3.8176" y="-0.4369" curve="-90.012891"/>
+<vertex x="3.3731" y="-0.0127" curve="-90"/>
+<vertex x="3.8176" y="0.4546" curve="-90"/>
+<vertex x="4.2595" y="-0.0025" curve="-90.012967"/>
+</polygon>
+<polygon width="0.127" layer="30">
+<vertex x="-3.8075" y="-0.9525" curve="-90"/>
+<vertex x="-4.7624" y="-0.0228" curve="-90.011749"/>
+<vertex x="-3.81" y="0.9526" curve="-90"/>
+<vertex x="-2.86" y="-0.0254" curve="-90.024193"/>
+</polygon>
+<polygon width="0.127" layer="29">
+<vertex x="-3.81" y="-0.4445" curve="-90.012891"/>
+<vertex x="-4.2545" y="-0.0203" curve="-90"/>
+<vertex x="-3.81" y="0.447" curve="-90"/>
+<vertex x="-3.3681" y="-0.0101" curve="-90.012967"/>
+</polygon>
+</package>
+<package name="0603">
+<description>&lt;p&gt;&lt;b&gt;Generic 1608 (0603) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-1.6" y1="0.7" x2="1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="0.7" x2="1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="1.6" y1="-0.7" x2="-1.6" y2="-0.7" width="0.0508" layer="39"/>
+<wire x1="-1.6" y1="-0.7" x2="-1.6" y2="0.7" width="0.0508" layer="39"/>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
+<package name="0402">
+<description>&lt;p&gt;&lt;b&gt;Generic 1005 (0402) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<wire x1="-0.2704" y1="0.2286" x2="0.2704" y2="0.2286" width="0.1524" layer="51"/>
+<wire x1="0.2704" y1="-0.2286" x2="-0.2704" y2="-0.2286" width="0.1524" layer="51"/>
+<wire x1="-1.2" y1="0.65" x2="1.2" y2="0.65" width="0.0508" layer="39"/>
+<wire x1="1.2" y1="0.65" x2="1.2" y2="-0.65" width="0.0508" layer="39"/>
+<wire x1="1.2" y1="-0.65" x2="-1.2" y2="-0.65" width="0.0508" layer="39"/>
+<wire x1="-1.2" y1="-0.65" x2="-1.2" y2="0.65" width="0.0508" layer="39"/>
+<smd name="1" x="-0.58" y="0" dx="0.85" dy="0.9" layer="1"/>
+<smd name="2" x="0.58" y="0" dx="0.85" dy="0.9" layer="1"/>
+<text x="0" y="0.762" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.762" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.3048" layer="51"/>
+<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.3048" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
+<package name="0805">
+<description>&lt;p&gt;&lt;b&gt;Generic 2012 (0805) package&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;0.2mm courtyard excess rounded to nearest 0.05mm.&lt;/p&gt;</description>
+<smd name="1" x="-0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<smd name="2" x="0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<text x="0" y="0.889" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.889" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="-1.5" y1="0.8" x2="1.5" y2="0.8" width="0.0508" layer="39"/>
+<wire x1="1.5" y1="0.8" x2="1.5" y2="-0.8" width="0.0508" layer="39"/>
+<wire x1="1.5" y1="-0.8" x2="-1.5" y2="-0.8" width="0.0508" layer="39"/>
+<wire x1="-1.5" y1="-0.8" x2="-1.5" y2="0.8" width="0.0508" layer="39"/>
+</package>
 </packages>
 <symbols>
-<symbol name="RESISTOR">
+<symbol name="RESISTOR@1">
 <wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
 <wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
 <wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.1524" layer="94"/>
@@ -641,15 +761,30 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 </symbol>
+<symbol name="RESISTOR">
+<wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.254" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-0.254" y1="-1.016" x2="0.381" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="1.016" x2="1.016" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<text x="0" y="1.524" size="1.778" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.524" size="1.778" layer="96" font="vector" align="top-center">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="10KOHM-1/4W-1%(PTH)" prefix="R" uservalue="yes">
 <description>RES-12183</description>
 <gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+<gate name="G$1" symbol="RESISTOR@1" x="0" y="0"/>
 </gates>
 <devices>
-<device name="HORIZ" package="AXIAL-0.3">
+<device name="HORIZ" package="AXIAL-0.3@1">
 <connects>
 <connect gate="G$1" pin="1" pad="P$1"/>
 <connect gate="G$1" pin="2" pad="P$2"/>
@@ -673,7 +808,7 @@ It has a reduced top mask to make it harder to install upside-down.</description
 </technology>
 </technologies>
 </device>
-<device name="VERT" package="AXIAL-0.1">
+<device name="VERT" package="AXIAL-0.1@1">
 <connects>
 <connect gate="G$1" pin="1" pad="P$1"/>
 <connect gate="G$1" pin="2" pad="P$2"/>
@@ -694,6 +829,86 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <technology name="">
 <attribute name="PROD_ID" value="RES-12183" constant="no"/>
 <attribute name="VALUE" value="10k" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RESISTOR" prefix="R">
+<description>Generic Resistor Package</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="AXIAL-0.3" package="AXIAL-0.3">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="AXIAL-0.3-KIT" package="AXIAL-0.3-KIT">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0402" package="0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0603" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0805" package="0805">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="1206" package="1206">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value=" " constant="no"/>
+<attribute name="VALUE" value=" " constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2464,6 +2679,489 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 </deviceset>
 </devicesets>
 </library>
+<library name="Seeed-OPL-Connector">
+<packages>
+<package name="H5-2.54">
+<wire x1="-1.27" y1="6.35" x2="1.27" y2="6.35" width="0.127" layer="21"/>
+<wire x1="1.27" y1="6.35" x2="1.27" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-6.35" x2="-1.27" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-6.35" x2="-1.27" y2="6.35" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="6.35" x2="1.27" y2="6.35" width="0" layer="39"/>
+<wire x1="1.27" y1="6.35" x2="1.27" y2="-3.81" width="0" layer="39"/>
+<wire x1="1.27" y1="-3.81" x2="-1.27" y2="-3.81" width="0" layer="39"/>
+<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="6.35" width="0" layer="39"/>
+<pad name="1" x="0" y="5.08" drill="0.889" diameter="1.651" shape="square"/>
+<pad name="2" x="0" y="2.54" drill="0.889" diameter="1.651"/>
+<pad name="3" x="0" y="0" drill="0.889" diameter="1.651"/>
+<pad name="4" x="0" y="-2.54" drill="0.889" diameter="1.651"/>
+<text x="-1.905" y="-0.635" size="0.889" layer="25" ratio="11" rot="R90">&gt;name</text>
+<text x="2.54" y="-0.635" size="0.889" layer="27" ratio="11" rot="R90">&gt;value</text>
+<rectangle x1="-1.27" y1="-6.35" x2="1.27" y2="6.35" layer="39"/>
+<pad name="5" x="0" y="-5.08" drill="0.889" diameter="1.651"/>
+</package>
+</packages>
+<symbols>
+<symbol name="HEADER-5P">
+<wire x1="-2.54" y1="6.35" x2="2.54" y2="6.35" width="0.254" layer="94"/>
+<wire x1="2.54" y1="6.35" x2="2.54" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-6.35" x2="-2.54" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-6.35" x2="-2.54" y2="6.35" width="0.254" layer="94"/>
+<text x="-8.89" y="7.62" size="1.27" layer="95" ratio="10">&gt;name</text>
+<text x="-2.54" y="7.62" size="1.27" layer="96" ratio="10">&gt;value</text>
+<pin name="1" x="-7.62" y="5.08" visible="pad" length="middle" function="dotclk"/>
+<pin name="2" x="-7.62" y="2.54" visible="pad" length="middle"/>
+<pin name="3" x="-7.62" y="0" visible="pad" length="middle"/>
+<pin name="4" x="-7.62" y="-2.54" visible="pad" length="middle"/>
+<pin name="5" x="-7.62" y="-5.08" visible="pad" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIP-BLACK-FEMALE-HEADER-VERT(5P-2.54)" prefix="J" uservalue="yes">
+<description>320030028</description>
+<gates>
+<gate name="G$1" symbol="HEADER-5P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="H5-2.54">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="F185-1105A0BSYA1"/>
+<attribute name="VALUE" value="5p-2.54"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="Seeed-OPL-Diode">
+<packages>
+<package name="SOD-523">
+<description>&lt;b&gt;0603&lt;b&gt;&lt;p&gt;</description>
+<wire x1="-0.6" y1="0.4" x2="0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.4" x2="0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="-0.4" x2="-0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="-0.4" x2="-0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="-0.127" y1="0.254" x2="-0.127" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.254" x2="0.127" y2="0" width="0.127" layer="21"/>
+<wire x1="0.127" y1="0" x2="-0.127" y2="-0.254" width="0.127" layer="21"/>
+<smd name="+" x="-0.8" y="0" dx="0.762" dy="0.7" layer="1" roundness="25"/>
+<smd name="-" x="0.8" y="0" dx="0.762" dy="0.7" layer="1" roundness="25"/>
+<text x="-1.905" y="0.762" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-1.524" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<text x="-0.67" y="-0.065" size="0.254" layer="33" ratio="10">&gt;name</text>
+<polygon width="0.127" layer="21">
+<vertex x="-0.127" y="0.254"/>
+<vertex x="0.127" y="0"/>
+<vertex x="-0.127" y="-0.254"/>
+</polygon>
+<wire x1="-0.4" y1="0.4" x2="0.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="-0.4" x2="0.4" y2="-0.4" width="0.127" layer="21"/>
+</package>
+<package name="SOD-323">
+<description>&lt;b&gt;0805&lt;b&gt;&lt;p&gt;</description>
+<wire x1="0.85" y1="0.625" x2="0.85" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="0.85" y1="-0.625" x2="-0.85" y2="-0.625" width="0.127" layer="21"/>
+<wire x1="-0.85" y1="-0.625" x2="-0.85" y2="0.625" width="0.127" layer="51"/>
+<wire x1="-0.85" y1="0.625" x2="0.85" y2="0.625" width="0.127" layer="21"/>
+<wire x1="-0.14" y1="0.381" x2="-0.14" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.381" x2="0.254" y2="0" width="0.127" layer="21"/>
+<wire x1="0.254" y1="0" x2="-0.127" y2="-0.381" width="0.127" layer="21"/>
+<smd name="+" x="-1.2" y="0" dx="1" dy="0.8" layer="1" roundness="25"/>
+<smd name="-" x="1.2" y="0" dx="1" dy="0.8" layer="1" roundness="25"/>
+<text x="-1.905" y="0.889" size="0.889" layer="25" font="vector" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-1.8415" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<text x="-1.27" y="-0.635" size="0.635" layer="33" font="vector" ratio="10">&gt;NAME</text>
+<polygon width="0.127" layer="21">
+<vertex x="-0.127" y="-0.381"/>
+<vertex x="-0.127" y="0.381"/>
+<vertex x="0.254" y="0"/>
+</polygon>
+<wire x1="-0.85" y1="0.6" x2="-0.85" y2="0.5" width="0.127" layer="21"/>
+<wire x1="0.85" y1="0.6" x2="0.85" y2="0.5" width="0.127" layer="21"/>
+<wire x1="-0.85" y1="-0.6" x2="-0.85" y2="-0.5" width="0.127" layer="21"/>
+<wire x1="0.85" y1="-0.6" x2="0.85" y2="-0.5" width="0.127" layer="21"/>
+</package>
+<package name="D1005">
+<wire x1="-1.27" y1="0.762" x2="1.27" y2="0.762" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-0.762" x2="-1.27" y2="-0.762" width="0.127" layer="21"/>
+<wire x1="-0.1905" y1="0" x2="-0.5715" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="-0.381" x2="-0.5715" y2="-0.1905" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="-0.1905" x2="-0.5715" y2="0.1905" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="0.1905" x2="-0.5715" y2="0.381" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="0.381" x2="-0.1905" y2="0" width="0.127" layer="21"/>
+<wire x1="-0.1905" y1="0" x2="-0.5715" y2="-0.1905" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="-0.1905" x2="-0.4445" y2="-0.0635" width="0.127" layer="21"/>
+<wire x1="-0.4445" y1="-0.0635" x2="-0.3175" y2="0.0635" width="0.127" layer="21"/>
+<wire x1="-0.3175" y1="0.0635" x2="-0.5715" y2="0.1905" width="0.127" layer="21"/>
+<wire x1="-0.5715" y1="0.1905" x2="-0.4445" y2="-0.0635" width="0.127" layer="21"/>
+<smd name="-" x="0.889" y="0" dx="1.778" dy="1.143" layer="1" rot="R180"/>
+<smd name="+" x="-1.27" y="0" dx="1.016" dy="1.016" layer="1" rot="R180"/>
+<text x="-1.905" y="1.016" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-1.905" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+</package>
+<package name="DO-35">
+<wire x1="-1.9" y1="-1" x2="-1.9" y2="1" width="0.127" layer="21"/>
+<wire x1="-1.9" y1="1" x2="1.3" y2="1" width="0.127" layer="21"/>
+<wire x1="1.3" y1="1" x2="1.9" y2="1" width="0.127" layer="21"/>
+<wire x1="1.9" y1="1" x2="1.9" y2="-1" width="0.127" layer="21"/>
+<wire x1="1.9" y1="-1" x2="1.3" y2="-1" width="0.127" layer="21"/>
+<wire x1="1.3" y1="-1" x2="-1.9" y2="-1" width="0.127" layer="21"/>
+<wire x1="1.3" y1="-1" x2="1.3" y2="1" width="0.127" layer="21"/>
+<wire x1="1.905" y1="0" x2="2.159" y2="0" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="0" x2="-2.159" y2="0" width="0.127" layer="21"/>
+<pad name="A" x="-3" y="0" drill="0.8" rot="R180"/>
+<pad name="C" x="3" y="0" drill="0.8" rot="R180"/>
+<text x="-1.905" y="-2.159" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<text x="-1.905" y="1.27" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<rectangle x1="-1.905" y1="-1.016" x2="1.905" y2="1.016" layer="39" rot="R180"/>
+</package>
+<package name="DO-220AA">
+<description>http://www.vishay.com/docs/88915/ss1p3l.pdf</description>
+<wire x1="-1.778" y1="-1.016" x2="-1.778" y2="1.016" width="0.127" layer="51"/>
+<wire x1="-1.778" y1="1.016" x2="1.778" y2="1.016" width="0.127" layer="51"/>
+<wire x1="1.778" y1="1.016" x2="1.778" y2="-1.016" width="0.127" layer="51"/>
+<wire x1="1.778" y1="-1.016" x2="-1.778" y2="-1.016" width="0.127" layer="51"/>
+<smd name="-" x="1.176" y="0" dx="2.032" dy="2.54" layer="1" rot="R270"/>
+<smd name="+" x="-1.811" y="0" dx="1.27" dy="1.524" layer="1" rot="R180"/>
+<text x="-1.905" y="1.27" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-2.159" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<rectangle x1="-1.778" y1="-1.016" x2="1.778" y2="1.016" layer="39" rot="R180"/>
+<polygon width="0.127" layer="21">
+<vertex x="-0.889" y="0.381"/>
+<vertex x="-0.889" y="-0.508"/>
+<vertex x="-0.381" y="0"/>
+</polygon>
+<wire x1="-1.8" y1="0.8" x2="-1.8" y2="1" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="1" x2="-0.2" y2="1" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="-0.9" x2="-1.8" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="-1" x2="-0.2" y2="-1" width="0.127" layer="21"/>
+</package>
+<package name="DO-41">
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="-2.54" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<pad name="1" x="-4.445" y="0" drill="1.0414" diameter="1.905"/>
+<pad name="2" x="4.445" y="0" drill="1.0414" diameter="1.905"/>
+<text x="-3.81" y="1.651" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-3.81" y="-2.54" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<rectangle x1="1.27" y1="-1.27" x2="1.905" y2="1.27" layer="21"/>
+<rectangle x1="-3.3" y1="-0.3175" x2="-2.54" y2="0.3175" layer="21"/>
+<rectangle x1="2.54" y1="-0.3175" x2="3.3" y2="0.3175" layer="21"/>
+</package>
+<package name="SOD-123">
+<description>&lt;b&gt;Diode&lt;/b&gt;</description>
+<wire x1="-1.143" y1="-0.635" x2="-1.143" y2="0.635" width="0.127" layer="51"/>
+<wire x1="1.143" y1="0.635" x2="1.143" y2="-0.635" width="0.127" layer="51"/>
+<wire x1="-1.143" y1="0.889" x2="1.143" y2="0.889" width="0.127" layer="21"/>
+<wire x1="1.143" y1="-0.889" x2="-1.143" y2="-0.889" width="0.127" layer="21"/>
+<wire x1="0.381" y1="0" x2="-0.381" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.508" x2="-0.381" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.381" x2="-0.381" y2="0.635" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="0.635" x2="0.381" y2="0" width="0.127" layer="21"/>
+<wire x1="0.381" y1="0" x2="-0.381" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.508" x2="-0.254" y2="0.508" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="0.508" x2="0.254" y2="0" width="0.127" layer="21"/>
+<wire x1="0.254" y1="0" x2="-0.381" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.381" x2="-0.254" y2="0.381" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="0.381" x2="0.127" y2="0" width="0.127" layer="21"/>
+<wire x1="0.127" y1="0" x2="-0.254" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-0.254" x2="-0.254" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-0.127" x2="-0.254" y2="0.254" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="0.254" x2="-0.127" y2="0.127" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.127" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="-0.254" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-0.127" x2="-0.127" y2="0.127" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.127" x2="-0.127" y2="0" width="0.127" layer="21"/>
+<smd name="-" x="1.651" y="0" dx="1.397" dy="1.397" layer="1" rot="R180"/>
+<smd name="+" x="-1.651" y="0" dx="1.397" dy="1.397" layer="1" rot="R180"/>
+<text x="-1.905" y="1.143" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-2.032" size="0.889" layer="27" font="vector" ratio="11">&gt;VALUE</text>
+<text x="-0.889" y="-0.635" size="0.381" layer="33" ratio="10">&gt;NAME</text>
+<rectangle x1="1.2" y1="-0.4" x2="1.95" y2="0.45" layer="51" rot="R180"/>
+<rectangle x1="-1.95" y1="-0.4" x2="-1.2" y2="0.45" layer="51" rot="R180"/>
+</package>
+<package name="DO-15">
+<wire x1="3.175" y1="-1.905" x2="2.175" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="2.175" y1="-1.905" x2="-3.325" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-1.905" x2="3.175" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-0.127" x2="3.175" y2="1.595" width="0.127" layer="21"/>
+<wire x1="3.175" y1="1.595" x2="2.175" y2="1.595" width="0.127" layer="21"/>
+<wire x1="2.175" y1="1.595" x2="-3.325" y2="1.595" width="0.127" layer="21"/>
+<wire x1="-3.325" y1="1.595" x2="-3.325" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="2.175" y1="-1.905" x2="2.175" y2="1.595" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-0.127" x2="4.445" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="-3.429" y1="-0.127" x2="-4.699" y2="-0.127" width="0.127" layer="21"/>
+<pad name="-" x="5.675" y="-0.155" drill="1.1" diameter="2.1844" rot="R180"/>
+<pad name="+" x="-5.825" y="-0.155" drill="1.1" diameter="2.1844" rot="R180"/>
+<text x="-3.175" y="1.905" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-3.175" y="-3.175" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+</package>
+<package name="LL-34">
+<wire x1="1.6764" y1="-0.6604" x2="-1.6764" y2="-0.6604" width="0.127" layer="51"/>
+<wire x1="-1.6764" y1="-0.6604" x2="-1.6764" y2="0.6604" width="0.127" layer="51"/>
+<wire x1="-1.6764" y1="0.6604" x2="1.6764" y2="0.6604" width="0.127" layer="51"/>
+<wire x1="1.6764" y1="0.6604" x2="1.6764" y2="-0.6604" width="0.127" layer="51"/>
+<smd name="C" x="1.524" y="0" dx="1.524" dy="1.6764" layer="1" rot="R180"/>
+<smd name="A" x="-1.524" y="0" dx="1.524" dy="1.6764" layer="1" rot="R180"/>
+<text x="-1.905" y="1.27" size="0.889" layer="25" font="vector" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-2.032" size="0.889" layer="27" font="vector" ratio="11">&gt;VALUE</text>
+<polygon width="0.127" layer="21">
+<vertex x="0.381" y="0"/>
+<vertex x="-0.254" y="-0.508"/>
+<vertex x="-0.254" y="0.508"/>
+</polygon>
+<wire x1="-0.7" y1="0.66" x2="0.7" y2="0.66" width="0.127" layer="21"/>
+<wire x1="-0.7" y1="-0.66" x2="0.7" y2="-0.66" width="0.127" layer="21"/>
+</package>
+<package name="DO-214AB">
+<description>SMC&lt;P/&gt;
+http://www.vishay.com/docs/88751/88751.pdf</description>
+<smd name="2" x="3.683" y="0" dx="2.286" dy="4.064" layer="1" rot="R180"/>
+<smd name="1" x="-3.683" y="0" dx="2.286" dy="4.064" layer="1" rot="R180"/>
+<wire x1="3.429" y1="-2.921" x2="-3.429" y2="-2.921" width="0.127" layer="21"/>
+<wire x1="-3.429" y1="-2.921" x2="-3.429" y2="2.921" width="0.127" layer="51"/>
+<wire x1="-3.429" y1="2.921" x2="3.429" y2="2.921" width="0.127" layer="21"/>
+<wire x1="3.429" y1="2.921" x2="3.429" y2="-2.921" width="0.127" layer="51"/>
+<polygon width="0.127" layer="21">
+<vertex x="-0.889" y="1.905"/>
+<vertex x="1.016" y="0"/>
+<vertex x="-0.889" y="-1.905"/>
+</polygon>
+<rectangle x1="-3.429" y1="-2.921" x2="3.429" y2="2.921" layer="39" rot="R180"/>
+<text x="-3.175" y="3.175" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-3.175" y="-4.064" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<wire x1="3.43" y1="2.9" x2="3.43" y2="2.1" width="0.127" layer="21"/>
+<wire x1="3.43" y1="-2.9" x2="3.43" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-3.43" y1="-2.9" x2="-3.43" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-3.43" y1="2.9" x2="-3.43" y2="2.1" width="0.127" layer="21"/>
+</package>
+<package name="DO-214AC">
+<description>http://www.sycelectronica.com.ar/semiconductores/1N4007-SMD.pdf</description>
+<smd name="1" x="-2.042" y="0" dx="1.77" dy="1.8" layer="1" rot="R90"/>
+<smd name="2" x="2.042" y="0" dx="1.77" dy="1.8" layer="1" rot="R90"/>
+<polygon width="0.127" layer="21">
+<vertex x="-0.381" y="0.762"/>
+<vertex x="0.508" y="0"/>
+<vertex x="-0.381" y="-0.762"/>
+</polygon>
+<wire x1="-2.145" y1="1.35" x2="2.145" y2="1.35" width="0.127" layer="21"/>
+<wire x1="2.145" y1="1.35" x2="2.145" y2="-1.35" width="0.127" layer="51"/>
+<wire x1="2.145" y1="-1.35" x2="-2.145" y2="-1.35" width="0.127" layer="21"/>
+<wire x1="-2.145" y1="-1.35" x2="-2.145" y2="1.35" width="0.127" layer="51"/>
+<text x="-1.905" y="1.651" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-2.54" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<rectangle x1="-2.159" y1="-1.27" x2="2.159" y2="1.27" layer="39"/>
+<wire x1="2.15" y1="1.3" x2="2.15" y2="1" width="0.127" layer="21"/>
+<wire x1="2.15" y1="-1.3" x2="2.15" y2="-1" width="0.127" layer="21"/>
+<wire x1="-2.15" y1="-1.3" x2="-2.15" y2="-1" width="0.127" layer="21"/>
+<wire x1="-2.15" y1="1.3" x2="-2.15" y2="1" width="0.127" layer="21"/>
+</package>
+<package name="SMINI2-F5-B">
+<wire x1="-0.85" y1="0.625" x2="0.85" y2="0.625" width="0.127" layer="21"/>
+<wire x1="0.85" y1="0.625" x2="0.85" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="0.85" y1="-0.625" x2="-0.85" y2="-0.625" width="0.127" layer="21"/>
+<wire x1="-0.85" y1="-0.625" x2="-0.85" y2="0.625" width="0.127" layer="51"/>
+<smd name="+" x="-1.2" y="0" dx="0.9" dy="0.9" layer="1"/>
+<smd name="-" x="1.2" y="0" dx="0.9" dy="1.1" layer="1"/>
+<rectangle x1="0.254" y1="-0.381" x2="0.508" y2="0.381" layer="21"/>
+<text x="-1.905" y="0.889" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.905" y="-1.778" size="0.889" layer="27" ratio="11">&gt;VALUE</text>
+<rectangle x1="-0.85" y1="-0.625" x2="0.85" y2="0.625" layer="39"/>
+<wire x1="-0.85" y1="0.6" x2="-0.85" y2="0.5" width="0.127" layer="21"/>
+<wire x1="-0.85" y1="-0.6" x2="-0.85" y2="-0.5" width="0.127" layer="21"/>
+</package>
+<package name="DO-214AA">
+<wire x1="2.16" y1="-1.78" x2="-2.14" y2="-1.78" width="0.2032" layer="21"/>
+<wire x1="-2.14" y1="-1.78" x2="-2.16" y2="-1.78" width="0.2032" layer="21"/>
+<wire x1="-2.16" y1="-1.78" x2="-2.16" y2="1.78" width="0.2032" layer="51"/>
+<wire x1="-2.16" y1="1.78" x2="-2.14" y2="1.78" width="0.2032" layer="21"/>
+<wire x1="-2.14" y1="1.78" x2="2.16" y2="1.78" width="0.2032" layer="21"/>
+<wire x1="2.16" y1="1.78" x2="2.16" y2="-1.78" width="0.2032" layer="51"/>
+<wire x1="0.508" y1="0" x2="0.381" y2="-0.127" width="0.127" layer="21"/>
+<wire x1="0.381" y1="-0.127" x2="0.254" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="0.254" y1="-0.254" x2="0.127" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.889" x2="-0.508" y2="-1.016" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="-1.016" x2="-0.508" y2="1.016" width="0.127" layer="21"/>
+<wire x1="-0.508" y1="1.016" x2="-0.381" y2="0.889" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="0.889" x2="-0.254" y2="0.762" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="0.889" x2="-0.381" y2="-0.889" width="0.127" layer="21"/>
+<wire x1="-0.381" y1="-0.889" x2="-0.254" y2="-0.762" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-0.762" x2="-0.127" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="-0.762" x2="-0.254" y2="0.762" width="0.127" layer="21"/>
+<wire x1="-0.254" y1="0.762" x2="-0.127" y2="0.635" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.635" x2="0" y2="0.508" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="0.635" x2="-0.127" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-0.127" y1="-0.635" x2="0" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.508" x2="0.127" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.508" x2="0" y2="0.508" width="0.127" layer="21"/>
+<wire x1="0" y1="0.508" x2="0.127" y2="0.381" width="0.127" layer="21"/>
+<wire x1="0.127" y1="0.381" x2="0.254" y2="0.254" width="0.127" layer="21"/>
+<wire x1="0.127" y1="0.381" x2="0.127" y2="-0.381" width="0.127" layer="21"/>
+<wire x1="0.254" y1="-0.254" x2="0.254" y2="0.254" width="0.127" layer="21"/>
+<wire x1="0.254" y1="0.254" x2="0.381" y2="0.127" width="0.127" layer="21"/>
+<wire x1="0.381" y1="0.127" x2="0.508" y2="0" width="0.127" layer="21"/>
+<wire x1="0.381" y1="0.127" x2="0.381" y2="-0.127" width="0.127" layer="21"/>
+<rectangle x1="-3.429" y1="-1.905" x2="3.429" y2="1.905" layer="39" rot="R180"/>
+<smd name="+" x="-2.21" y="0" dx="2.743" dy="2.159" layer="1" rot="R270"/>
+<smd name="-" x="2.21" y="0" dx="2.743" dy="2.159" layer="1" rot="R270"/>
+<text x="-2.159" y="2.032" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.651" y="-2.794" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
+<text x="1.27" y="0" size="0.5" layer="33" ratio="10" rot="R180">&gt;NAME</text>
+<wire x1="2.16" y1="-1.78" x2="2.16" y2="-1.5" width="0.2032" layer="21"/>
+<wire x1="2.16" y1="1.52" x2="2.16" y2="1.78" width="0.2032" layer="21"/>
+<wire x1="-2.14" y1="1.52" x2="-2.14" y2="1.78" width="0.2032" layer="21"/>
+<wire x1="-2.14" y1="-1.78" x2="-2.14" y2="-1.5" width="0.2032" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DIODE*-1">
+<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="2.54" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.254" layer="94"/>
+<text x="-3.81" y="2.54" size="1.27" layer="95" ratio="10">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="1.27" layer="96" ratio="10">&gt;VALUE</text>
+<pin name="+" x="-3.81" y="0" visible="off" length="short" direction="pas"/>
+<pin name="-" x="3.81" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIODE*" prefix="D" uservalue="yes">
+<gates>
+<gate name="D" symbol="DIODE*-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="'0603'" package="SOD-523">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'0805'" package="SOD-323">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'1005'" package="D1005">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'1N4148'" package="DO-35">
+<connects>
+<connect gate="D" pin="+" pad="A"/>
+<connect gate="D" pin="-" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'SMP'" package="DO-220AA">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'SB120'" package="DO-41">
+<connects>
+<connect gate="D" pin="+" pad="1"/>
+<connect gate="D" pin="-" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'1206'" package="SOD-123">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'RL201'" package="DO-15">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'1N4148-SMD'" package="LL-34">
+<connects>
+<connect gate="D" pin="+" pad="A"/>
+<connect gate="D" pin="-" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'SMC'" package="DO-214AB">
+<connects>
+<connect gate="D" pin="+" pad="1"/>
+<connect gate="D" pin="-" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'SMA'" package="DO-214AC">
+<connects>
+<connect gate="D" pin="+" pad="1"/>
+<connect gate="D" pin="-" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'DZ2J150'" package="SMINI2-F5-B">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'SMB'" package="DO-214AA">
+<connects>
+<connect gate="D" pin="+" pad="+"/>
+<connect gate="D" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2486,7 +3184,7 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <part name="Y1" library="Seeed-OPL-Crystal-Oscillator" deviceset="DIP-CRYSTAL-16MHZ-18PF-30PPM-40R(HC49US)" device="" value="16MHZ"/>
 <part name="C1" library="Seeed-OPL-Capacitor" deviceset="DIP-CERAMIC-22PF-100V-5%-NPO(D5.0MM)" device="" value="22pf"/>
 <part name="C2" library="Seeed-OPL-Capacitor" deviceset="DIP-CERAMIC-22PF-100V-5%-NPO(D5.0MM)" device="" value="22pf"/>
-<part name="R1" library="SparkFun-Resistors" deviceset="10KOHM-1/4W-1%(PTH)" device="HORIZ-KIT" value="10k"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="10KOHM-1/4W-1%(PTH)" device="HORIZ-KIT" value="4.7K"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -2512,7 +3210,6 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <part name="SUPPLY8" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="J1" library="SparkFun-Boards" deviceset="ARDUINO_R3_SHIELD" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="JP1" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="AVR_SPI_PRG_6" device="2X3_LOCK" value="ICSP"/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -2530,7 +3227,11 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
+<part name="UART" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
+<part name="I2C" library="Seeed-OPL-Connector" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(5P-2.54)" device="" value="5p-2.54"/>
+<part name="D1" library="Seeed-OPL-Diode" deviceset="DIODE*" device="'1206'"/>
+<part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="1206" value="220"/>
 </parts>
 <sheets>
 <sheet>
@@ -2549,16 +3250,16 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <instance part="Y1" gate="G$1" x="-96.52" y="86.36" rot="R90"/>
 <instance part="C1" gate="G$1" x="-104.14" y="91.44" rot="R180"/>
 <instance part="C2" gate="G$1" x="-104.14" y="81.28"/>
-<instance part="R1" gate="G$1" x="-88.9" y="114.3" rot="R90"/>
+<instance part="R1" gate="G$1" x="-104.14" y="106.68"/>
 <instance part="GND1" gate="1" x="-27.94" y="12.7"/>
 <instance part="GND2" gate="1" x="-121.92" y="12.7" rot="R270"/>
 <instance part="GND3" gate="1" x="-58.42" y="12.7"/>
 <instance part="GND4" gate="1" x="-43.18" y="12.7"/>
 <instance part="SUPPLY1" gate="G$1" x="-5.08" y="93.98" rot="R180"/>
 <instance part="SUPPLY2" gate="G$1" x="5.08" y="93.98" rot="R180"/>
-<instance part="S1" gate="G$1" x="-101.6" y="109.22"/>
-<instance part="SUPPLY3" gate="G$1" x="-88.9" y="121.92"/>
-<instance part="GND5" gate="1" x="-114.3" y="109.22" rot="R270"/>
+<instance part="S1" gate="G$1" x="-114.3" y="109.22"/>
+<instance part="SUPPLY3" gate="G$1" x="-99.06" y="106.68" rot="R270"/>
+<instance part="GND5" gate="1" x="-127" y="109.22" rot="R270"/>
 <instance part="GND6" gate="1" x="-114.3" y="91.44" rot="R270"/>
 <instance part="GND7" gate="1" x="-114.3" y="81.28" rot="R270"/>
 <instance part="SUPPLY4" gate="G$1" x="-83.82" y="71.12" rot="R90"/>
@@ -2575,7 +3276,6 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <instance part="SUPPLY8" gate="G$1" x="-27.94" y="22.86"/>
 <instance part="J1" gate="G$1" x="-101.6" y="33.02"/>
 <instance part="SUPPLY9" gate="G$1" x="-121.92" y="22.86" rot="R90"/>
-<instance part="JP1" gate="G$1" x="15.24" y="116.84" rot="R270"/>
 <instance part="JP2" gate="G$1" x="7.62" y="7.62"/>
 <instance part="SUPPLY10" gate="G$1" x="55.88" y="76.2" rot="R180"/>
 <instance part="SUPPLY11" gate="G$1" x="30.48" y="53.34" rot="R270"/>
@@ -2593,7 +3293,11 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <instance part="GND15" gate="1" x="60.96" y="20.32" rot="R180"/>
 <instance part="GND16" gate="1" x="132.08" y="20.32" rot="R180"/>
 <instance part="GND17" gate="1" x="137.16" y="53.34" rot="R270"/>
-<instance part="JP3" gate="G$1" x="45.72" y="116.84" rot="R270"/>
+<instance part="UART" gate="G$1" x="45.72" y="116.84" rot="R270"/>
+<instance part="I2C" gate="G$1" x="20.32" y="119.38" rot="R90"/>
+<instance part="D1" gate="D" x="-25.4" y="116.84"/>
+<instance part="GND18" gate="1" x="0" y="116.84" rot="R90"/>
+<instance part="R5" gate="G$1" x="-10.16" y="116.84"/>
 </instances>
 <busses>
 </busses>
@@ -2602,7 +3306,6 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<wire x1="-88.9" y1="121.92" x2="-88.9" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VCC"/>
@@ -2642,11 +3345,6 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="-114.3" y1="22.86" x2="-121.92" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="4"/>
-<wire x1="20.32" y1="111.76" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
-<label x="20.32" y="101.6" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="5V"/>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
 </segment>
@@ -2684,16 +3382,26 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="22.86" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="4"/>
+<pinref part="UART" gate="G$1" pin="4"/>
 <wire x1="50.8" y1="111.76" x2="50.8" y2="106.68" width="0.1524" layer="91"/>
 <label x="50.8" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<label x="25.4" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="I2C" gate="G$1" pin="5"/>
+<wire x1="25.4" y1="111.76" x2="25.4" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="S1" gate="G$1" pin="1"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="-111.76" y1="109.22" x2="-106.68" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="-124.46" y1="109.22" x2="-121.92" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="S1" gate="G$1" pin="2"/>
+<wire x1="-121.92" y1="109.22" x2="-119.38" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="-119.38" y1="106.68" x2="-121.92" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-121.92" y1="106.68" x2="-121.92" y2="109.22" width="0.1524" layer="91"/>
+<junction x="-121.92" y="109.22"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
@@ -2741,11 +3449,6 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="-116.84" y1="10.16" x2="-116.84" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="111.76" x2="12.7" y2="106.68" width="0.1524" layer="91"/>
-<label x="12.7" y="101.6" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="GND"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 </segment>
@@ -2783,9 +3486,19 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="22.86" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="1"/>
+<pinref part="UART" gate="G$1" pin="1"/>
 <wire x1="43.18" y1="111.76" x2="43.18" y2="106.68" width="0.1524" layer="91"/>
 <label x="43.18" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<label x="15.24" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="I2C" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="111.76" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="-2.54" y1="116.84" x2="-5.08" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -2827,9 +3540,9 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-83.82" y="12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="111.76" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
-<label x="15.24" y="101.6" size="1.778" layer="95" rot="R90"/>
+<label x="20.32" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="I2C" gate="G$1" pin="3"/>
+<wire x1="20.32" y1="111.76" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -2845,22 +3558,18 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-83.82" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="3"/>
-<wire x1="17.78" y1="111.76" x2="17.78" y2="106.68" width="0.1524" layer="91"/>
-<label x="17.78" y="101.6" size="1.778" layer="95" rot="R90"/>
+<label x="22.86" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="I2C" gate="G$1" pin="4"/>
+<wire x1="22.86" y1="111.76" x2="22.86" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RST" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="-88.9" y1="109.22" x2="-88.9" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PC6(/RESET/PCI14)"/>
-<wire x1="-88.9" y1="106.68" x2="-81.28" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="106.68" x2="-81.28" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="3"/>
-<wire x1="-96.52" y1="109.22" x2="-91.44" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="-109.22" y1="109.22" x2="-91.44" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="109.22" x2="-91.44" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="-91.44" y1="106.68" x2="-88.9" y2="106.68" width="0.1524" layer="91"/>
-<junction x="-88.9" y="106.68"/>
 </segment>
 <segment>
 <pinref part="JP2" gate="G$1" pin="5"/>
@@ -2875,9 +3584,9 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-20.32" y="106.68" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="81.28" y1="91.44" x2="81.28" y2="83.82" width="0.1524" layer="91"/>
-<label x="81.28" y="78.74" size="1.778" layer="95" rot="R90"/>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="116.84" y1="76.2" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
+<label x="116.84" y="66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PC1" class="0">
@@ -2887,9 +3596,9 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-20.32" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="86.36" y1="91.44" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
-<label x="86.36" y="78.74" size="1.778" layer="95" rot="R90"/>
+<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="121.92" y1="76.2" x2="121.92" y2="71.12" width="0.1524" layer="91"/>
+<label x="121.92" y="66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PC2" class="0">
@@ -2899,9 +3608,9 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-20.32" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="116.84" y1="76.2" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
-<label x="116.84" y="66.04" size="1.778" layer="95" rot="R90"/>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="81.28" y1="91.44" x2="81.28" y2="83.82" width="0.1524" layer="91"/>
+<label x="81.28" y="78.74" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PC3" class="0">
@@ -2911,123 +3620,120 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <label x="-20.32" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="ULTRASONIC_1" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="121.92" y1="76.2" x2="121.92" y2="71.12" width="0.1524" layer="91"/>
-<label x="121.92" y="66.04" size="1.778" layer="95" rot="R90"/>
+<pinref part="ULTRASONIC_0" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="86.36" y1="91.44" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
+<label x="86.36" y="78.74" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PD2" class="0">
-<segment>
-<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="139.7" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
-<label x="134.62" y="48.26" size="1.778" layer="95" rot="R180"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI18/INT0)PD2"/>
 <wire x1="-25.4" y1="76.2" x2="-20.32" y2="76.2" width="0.1524" layer="91"/>
 <label x="-20.32" y="76.2" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="45.72" y1="76.2" x2="45.72" y2="68.58" width="0.1524" layer="91"/>
+<label x="45.72" y="63.5" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PD3" class="0">
-<segment>
-<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="139.7" y1="43.18" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
-<label x="134.62" y="43.18" size="1.778" layer="95" rot="R180"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI19/INT1/OC2B)PD3"/>
 <wire x1="-25.4" y1="73.66" x2="-20.32" y2="73.66" width="0.1524" layer="91"/>
 <label x="-20.32" y="73.66" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="50.8" y1="76.2" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
+<label x="50.8" y="63.5" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PD4" class="0">
-<segment>
-<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="127" y1="17.78" x2="127" y2="25.4" width="0.1524" layer="91"/>
-<label x="127" y="30.48" size="1.778" layer="95" rot="R270"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI20/XCK/T0)PD4"/>
 <wire x1="-25.4" y1="71.12" x2="-20.32" y2="71.12" width="0.1524" layer="91"/>
 <label x="-20.32" y="71.12" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="PD5" class="0">
-<segment>
-<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="121.92" y1="17.78" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
-<label x="121.92" y="30.48" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI21/T1/OC0B)PD5"/>
-<wire x1="-25.4" y1="68.58" x2="-20.32" y2="68.58" width="0.1524" layer="91"/>
-<label x="-20.32" y="68.58" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PD6" class="0">
-<segment>
-<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="91.44" y1="0" x2="91.44" y2="7.62" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI22/AIN0OC0A)PD6"/>
-<wire x1="-25.4" y1="66.04" x2="-20.32" y2="66.04" width="0.1524" layer="91"/>
-<label x="-20.32" y="66.04" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PD7" class="0">
-<segment>
-<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="86.36" y1="0" x2="86.36" y2="7.62" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI23/AIN1)PD7"/>
-<wire x1="-25.4" y1="63.5" x2="-20.32" y2="63.5" width="0.1524" layer="91"/>
-<label x="-20.32" y="63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PB0" class="0">
-<segment>
-<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="55.88" y1="17.78" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
-<label x="55.88" y="30.48" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI0/ICP/CLKO)PB0"/>
-<wire x1="-25.4" y1="58.42" x2="-20.32" y2="58.42" width="0.1524" layer="91"/>
-<label x="-20.32" y="58.42" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PB1" class="0">
-<segment>
-<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="50.8" y1="17.78" x2="50.8" y2="25.4" width="0.1524" layer="91"/>
-<label x="50.8" y="30.48" size="1.778" layer="95" rot="R270"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI1/OC1A/OC1S)PB1"/>
-<wire x1="-25.4" y1="55.88" x2="-20.32" y2="55.88" width="0.1524" layer="91"/>
-<label x="-20.32" y="55.88" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PB2" class="0">
-<segment>
-<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="30.48" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
-<label x="38.1" y="43.18" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="(PCI2/SS/OC1B)PB2"/>
-<wire x1="-25.4" y1="53.34" x2="-20.32" y2="53.34" width="0.1524" layer="91"/>
-<label x="-20.32" y="53.34" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PB3" class="0">
 <segment>
 <pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="TRIG"/>
 <wire x1="30.48" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
 <label x="38.1" y="48.26" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="PD5" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI21/T1/OC0B)PD5"/>
+<wire x1="-25.4" y1="68.58" x2="-20.32" y2="68.58" width="0.1524" layer="91"/>
+<label x="-20.32" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_6" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="30.48" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
+<label x="38.1" y="43.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD6" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI22/AIN0OC0A)PD6"/>
+<wire x1="-25.4" y1="66.04" x2="-20.32" y2="66.04" width="0.1524" layer="91"/>
+<label x="-20.32" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="55.88" y1="17.78" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
+<label x="55.88" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+</net>
+<net name="PD7" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI23/AIN1)PD7"/>
+<wire x1="-25.4" y1="63.5" x2="-20.32" y2="63.5" width="0.1524" layer="91"/>
+<label x="-20.32" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_5" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="50.8" y1="17.78" x2="50.8" y2="25.4" width="0.1524" layer="91"/>
+<label x="50.8" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+</net>
+<net name="PB0" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI0/ICP/CLKO)PB0"/>
+<wire x1="-25.4" y1="58.42" x2="-20.32" y2="58.42" width="0.1524" layer="91"/>
+<label x="-20.32" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="86.36" y1="0" x2="86.36" y2="7.62" width="0.1524" layer="91"/>
+<label x="86.36" y="7.62" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB1" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI1/OC1A/OC1S)PB1"/>
+<wire x1="-25.4" y1="55.88" x2="-20.32" y2="55.88" width="0.1524" layer="91"/>
+<label x="-20.32" y="55.88" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_4" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="91.44" y1="0" x2="91.44" y2="7.62" width="0.1524" layer="91"/>
+<label x="91.44" y="7.62" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB2" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="(PCI2/SS/OC1B)PB2"/>
+<wire x1="-25.4" y1="53.34" x2="-20.32" y2="53.34" width="0.1524" layer="91"/>
+<label x="-20.32" y="53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="127" y1="17.78" x2="127" y2="25.4" width="0.1524" layer="91"/>
+<label x="127" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
+</net>
+<net name="PB3" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI3/MOSI/OC2A)PB3"/>
 <wire x1="-25.4" y1="50.8" x2="-20.32" y2="50.8" width="0.1524" layer="91"/>
@@ -3038,13 +3744,13 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="17.78" y1="7.62" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
 <label x="22.86" y="7.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ULTRASONIC_3" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="121.92" y1="17.78" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
+<label x="121.92" y="30.48" size="1.778" layer="95" rot="R270"/>
+</segment>
 </net>
 <net name="PB4" class="0">
-<segment>
-<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="ECHO"/>
-<wire x1="45.72" y1="76.2" x2="45.72" y2="68.58" width="0.1524" layer="91"/>
-<label x="45.72" y="63.5" size="1.778" layer="95" rot="R90"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI4/MISO)PB4"/>
 <wire x1="-25.4" y1="48.26" x2="-20.32" y2="48.26" width="0.1524" layer="91"/>
@@ -3055,13 +3761,13 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="0" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
 <label x="-12.7" y="10.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="ECHO"/>
+<wire x1="139.7" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
+<label x="134.62" y="48.26" size="1.778" layer="95" rot="R180"/>
+</segment>
 </net>
 <net name="PB5" class="0">
-<segment>
-<pinref part="ULTRASONIC_7" gate="J_ULTRASONIC" pin="TRIG"/>
-<wire x1="50.8" y1="76.2" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
-<label x="50.8" y="63.5" size="1.778" layer="95" rot="R90"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="(PCI5/SCK)PB5"/>
 <wire x1="-25.4" y1="45.72" x2="-20.32" y2="45.72" width="0.1524" layer="91"/>
@@ -3072,10 +3778,15 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="0" y1="7.62" x2="-7.62" y2="7.62" width="0.1524" layer="91"/>
 <label x="-12.7" y="7.62" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="RX" class="0">
 <segment>
-<pinref part="JP3" gate="G$1" pin="2"/>
+<pinref part="ULTRASONIC_2" gate="J_ULTRASONIC" pin="TRIG"/>
+<wire x1="139.7" y1="43.18" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
+<label x="134.62" y="43.18" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="RX/IRQ" class="0">
+<segment>
+<pinref part="UART" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="111.76" x2="45.72" y2="106.68" width="0.1524" layer="91"/>
 <label x="45.72" y="101.6" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -3084,10 +3795,15 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <wire x1="-25.4" y1="81.28" x2="-20.32" y2="81.28" width="0.1524" layer="91"/>
 <label x="-20.32" y="81.28" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="TX" class="0">
 <segment>
-<pinref part="JP3" gate="G$1" pin="3"/>
+<label x="17.78" y="101.6" size="1.778" layer="95" rot="R90"/>
+<pinref part="I2C" gate="G$1" pin="2"/>
+<wire x1="17.78" y1="111.76" x2="17.78" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TX/LED" class="0">
+<segment>
+<pinref part="UART" gate="G$1" pin="3"/>
 <wire x1="48.26" y1="111.76" x2="48.26" y2="106.68" width="0.1524" layer="91"/>
 <label x="48.26" y="101.6" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -3095,6 +3811,24 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <pinref part="IC1" gate="G$1" pin="(PCI17/TXD)PD1"/>
 <wire x1="-25.4" y1="78.74" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
 <label x="-20.32" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="D1" gate="D" pin="+"/>
+<wire x1="-29.21" y1="116.84" x2="-35.56" y2="116.84" width="0.1524" layer="91"/>
+<label x="-35.56" y="116.84" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="S1" gate="G$1" pin="4"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="D1" gate="D" pin="-"/>
+<wire x1="-21.59" y1="116.84" x2="-15.24" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
