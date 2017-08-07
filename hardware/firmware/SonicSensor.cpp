@@ -1,6 +1,5 @@
 #include "SonicSensor.h"
 
-
 SonicSensor::SonicSensor(uint8_t triggerPin, uint8_t echoPin) {
     mTriggerPin = triggerPin;
     mEchoPin = echoPin;

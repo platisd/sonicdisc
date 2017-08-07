@@ -1,6 +1,8 @@
 #ifndef SONIC_SENSOR_H
 #define SONIC_SENSOR_H
 
+#include <stdint.h>
+
 class SonicSensor {
 public:
     /**
