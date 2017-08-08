@@ -79,9 +79,12 @@ ISR (PCINT2_vect) {
  */
 void setupChangeInterrupt(uint8_t pin) {
     pinMode(pin, INPUT);
-    *digitalPinToPCMSK(pin) |= bit(digitalPinToPCMSKbit(pin));  // Enable interrupt for pin
-    PCIFR |= bit(digitalPinToPCICRbit(pin)); // Clear any outstanding interrupt
-    PCICR |= bit(digitalPinToPCICRbit(pin)); // Enable interrupt for the group
+    // Enable interrupt for pin
+    *digitalPinToPCMSK(pin) |= bit(digitalPinToPCMSKbit(pin));
+    // Clear any outstanding interrupt
+    PCIFR |= bit(digitalPinToPCICRbit(pin));
+    // Enable interrupt for the pin's group
+    PCICR |= bit(digitalPinToPCICRbit(pin));
 }
 
 /**
@@ -153,7 +156,21 @@ bool isTimeToMeasure(unsigned long currentTime) {
  * of 10 microseconds.
  */
 void triggerSensors() {
-    //TO-DO: trigger all sensors at once using port manipulation
+    // Set all ultrasonic trigger pins to HIGH at the same time
+    // Port B handles D8 to D13
+    PORTB |= B00101001; // Set pins 8, 11, 13 HIGH
+    // Port C handles A0 to A5
+    PORTC |= B00001010; // Set pins A1, A3 HIGH
+    // Port D handles D0 to D7
+    PORTD |= B10011000; // Set pins D3, D4, D7 HIGH
+
+    // Keep the signal HIGH for 10 microseconds
+    delayMicroseconds(10);
+
+    // Set the trigger pins back to LOW
+    PORTB &= B11010110; // Set pins 8, 11, 13 LOW
+    PORTC &= B11110101; // Set pins A1, A3 LOW
+    PORTD &= B01100111; // Set pins D3, D4, D7 LOW
 }
 
 /**
@@ -190,11 +207,11 @@ void loop() {
                 // Disable interrupts while we prepare to calculate
                 // the distances to be certain that each set of measurements
                 // corresponds to the same point in time.
-                noInterrupts();
+                noInterrupts(); // Begin critical section
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
                     sensors[i].prepareToCalculate();
                 }
-                interrupts();
+                interrupts(); // End critical section
 
                 // Now that we are certain that our measurements are consistent
                 // time-wise, calculate the distance.
@@ -207,7 +224,7 @@ void loop() {
                 digitalWrite(INT_PIN, HIGH);
 
                 // Start a new measurement with critical section for consistency.
-                noInterrupts();
+                noInterrupts(); // Begin critical section
                 // First reset previous the echoes so the interrupts can update
                 // them again.
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
@@ -215,7 +232,7 @@ void loop() {
                 }
                 // Trigger all sensors at once
                 triggerSensors();
-                interrupts();
+                interrupts(); // End critical section
             }
             break;
         default:
