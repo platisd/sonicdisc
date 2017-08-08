@@ -6,11 +6,15 @@ const uint8_t NUM_OF_SENSORS = 8; // The number of sonic sensors on the disc
 const uint8_t I2C_PACKET_SIZE = 9; // The size of each I2C transmission in bytes
 const uint8_t SONIC_DISC_I2C_ADDRESS = 0x09; // The address to assume as an I2C slave
 // The pin to trigger an interrupt signal on the master MCU
-// to indicate that a measurement is ready to be transmitted
+// to indicate that a measurement is ready to be transmitted.
+// It is set HIGH when there are data to be fetched and LOW otherwise.
 const uint8_t INT_PIN = 0; // Note that this is also the RX pin
 // The pin connected to the on-bard LED for debugging
 const uint8_t LED_PIN = 1; // Note that this is also the TX pin
-
+// How often the measurements should take place (in milliseconds)
+const unsigned long MEASUREMENT_INTERVAL = 10;
+// The time (in milliseconds) that the last measurement took place
+unsigned long previousMeasurement = 0;
 // Sonic Disc's operational states
 enum State {
     STANDBY, // MCU and sensors are on but no measurements are being made
@@ -127,6 +131,32 @@ void handleReceipts(int numOfBytes) {
 }
 
 /**
+ * Check to see if it is OK to start a new cycle of measurements
+ * based on the current time and the measurement interval.
+ * @param  currentTime The current time in milliseconds to be compared
+ *                     with the last time that a measurement took place.
+ * @return             True if is time to conduct a new measurement and
+ *                     False otherwise
+ */
+bool isTimeToMeasure(unsigned long currentTime) {
+    bool isGoodTimeToMeasure = false;
+    if (currentTime - previousMeasurement >= MEASUREMENT_INTERVAL) {
+        isGoodTimeToMeasure = true;
+        previousMeasurement = currentTime;
+    }
+    return isGoodTimeToMeasure;
+}
+
+/**
+ * Triggers all sensors at once, using port manipulation for less
+ * computation cycles. This is done by sending a pulse with a width
+ * of 10 microseconds.
+ */
+void triggerSensors() {
+    //TO-DO: trigger all sensors at once using port manipulation
+}
+
+/**
  * Run once on boot or after a reset
  */
 void setup() {
@@ -156,6 +186,37 @@ void loop() {
         case STANDBY:
             break;
         case MEASURING:
+            if (isTimeToMeasure(millis())) {
+                // Disable interrupts while we prepare to calculate
+                // the distances to be certain that each set of measurements
+                // corresponds to the same point in time.
+                noInterrupts();
+                for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    sensors[i].prepareToCalculate();
+                }
+                interrupts();
+
+                // Now that we are certain that our measurements are consistent
+                // time-wise, calculate the distance.
+                for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    // Calculate distance for each sensor.
+                    // Will also timeout any pending measurements
+                    sensors[i].calculateDistance();
+                }
+                // Signal that we have a new set of measurements
+                digitalWrite(INT_PIN, HIGH);
+
+                // Start a new measurement with critical section for consistency.
+                noInterrupts();
+                // First reset previous the echoes so the interrupts can update
+                // them again.
+                for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    sensors[i].resetEcho();
+                }
+                // Trigger all sensors at once
+                triggerSensors();
+                interrupts();
+            }
             break;
         default:
             break; // We should not get here
