@@ -40,8 +40,8 @@ uint8_t SonicSensor::calculateDistance() {
     // the ultrasonic beam has not yet returned
     // and the echo value (if any) is remnant of
     // a previous measurement.
-    if (mEchoTime < mTriggerTime) return 0;
-    unsigned long pulseWidth = mEchoTime - mTriggerTime;
+    if (mEchoTimeNonVolatile < mTriggerTime) return 0;
+    unsigned long pulseWidth = mEchoTimeNonVolatile - mTriggerTime;
     // Accordig to the HC-SR04 datasheet (https://goo.gl/b22dp3)
     // the formula to calculate the distance in centimeters is:
     // cm = uS / 58
@@ -50,10 +50,12 @@ uint8_t SonicSensor::calculateDistance() {
     return distance < 2 ? 0 : distance;
 }
 
-uint8_t SonicSensor::resetDistance() {
-    uint8_t previousDistance = mDistance;
-    mDistance = 0;
-    return previousDistance;
+void SonicSensor::prepareToCalculate() {
+    mEchoTimeNonVolatile = mEchoTime;
+}
+
+void SonicSensor::resetEcho() {
+    mEchoTime = 0;
 }
 
 uint8_t SonicSensor::getDistance() {

@@ -54,18 +54,30 @@ public:
     unsigned long getFinishTime();
 
     /**
+     * Creates a copy of the (volatile) echo value so to calculate
+     * the distance. This should be contained inside a critical section
+     * and its purpose is use the non-volatile copies of the echo values
+     * when calculating the distance. Subsequently, the calculation of
+     * distance (which might be computationally intensive) does not have
+     * to be contained inside a critical section.
+     * MUST be called BEFORE calculateDistance().
+     */
+    void prepareToCalculate();
+
+    /**
     * Calculates the distance using the start and end times of
     * a measurement. If the end has not yet come, then distance
-    * is set to 0.
+    * is set to 0. MUST be called AFTER prepareToCalculate().
     * @return The calculated distance in centimeters or error code
      */
     uint8_t calculateDistance();
 
     /**
-     * Resets the distance to designate the beginning of a new one.
-     * @return The previous value of the distance
+     * Resets the echo to designate the beginning of a new measurement.
+     * Since the echo time is set by an interrupt, this function should
+     * be contained inside a critical section with interrupts disabled.
      */
-    uint8_t resetDistance();
+    void resetEcho();
 
     /**
      * Returns the already calculated distance in cm.
@@ -78,7 +90,8 @@ public:
     uint8_t getDistance();
 private:
     uint8_t mTriggerPin, mEchoPin, mDistance;
-    unsigned long mTriggerTime, mEchoTime;
+    unsigned long mTriggerTime, mEchoTimeNonVolatile;
+    volatile unsigned long mEchoTime;
 };
 
 #endif
