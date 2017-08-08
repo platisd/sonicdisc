@@ -76,6 +76,8 @@ public:
      * Resets the echo to designate the beginning of a new measurement.
      * Since the echo time is set by an interrupt, this function should
      * be contained inside a critical section with interrupts disabled.
+     * It also should be called before initiating a new interrupt-based
+     * measurement.
      */
     void resetEcho();
 

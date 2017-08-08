@@ -50,11 +50,33 @@ SonicSensor sensors[NUM_OF_SENSORS] = {
 };
 
 /**
+ * Handles the echo signal from an ultrasonic sensor.
+ * To be called from within an interrupt, it checks all the echo
+ * pins to see if any of them is HIGH and updates the echo time
+ * of the respective sensor. If an echo time has already been
+ * set, then the new value is ignored.
+ */
+void handleEcho() {
+    // Go through the sensors' echo pins
+    for (int i = 0; i < NUM_OF_SENSORS; i++) {
+        // If a pin is HIGH, it means that a pulse is underway
+        if (digitalRead(sensors[i].getEchoPin()) == HIGH) {
+            // We only care for newly generated pulses and not ones
+            // we have handled before.
+            if (sensors[i].getFinishTime() == 0) {
+                sensors[i].setFinishTime(micros());
+            }
+            break;
+        }
+    }
+}
+
+/**
  * Hook for pin change interrupt of PCINT0 vector
  * Pins: D8 to D13
  */
 ISR (PCINT0_vect) {
-
+    handleEcho();
 }
 
 /**
@@ -62,7 +84,7 @@ ISR (PCINT0_vect) {
  * Pins: A0 to A5
  */
 ISR(PCINT1_vect) {
-
+    handleEcho();
 }
 
 /**
@@ -70,7 +92,7 @@ ISR(PCINT1_vect) {
  * Pins: D0 to D7
  */
 ISR (PCINT2_vect) {
-
+    handleEcho();
 }
 
 /**
@@ -233,6 +255,12 @@ void loop() {
                 // Trigger all sensors at once
                 triggerSensors();
                 interrupts(); // End critical section
+
+                // Designate the start of a new measurement for each sensor
+                unsigned long startOfMeasurement = micros();
+                for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    sensors[i].setStartTime(startOfMeasurement);
+                }
             }
             break;
         default:
