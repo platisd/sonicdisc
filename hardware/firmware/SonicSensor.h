@@ -54,14 +54,30 @@ public:
     unsigned long getFinishTime();
 
     /**
-     * Calculates the measured distance and returns it in cm.
-     * In case of a timeout (e.g. ultrasonic beam taking too long to return)
-     * or detection of an invalid value an error code (0) is returned.
+    * Calculates the distance using the start and end times of
+    * a measurement. If the end has not yet come, then distance
+    * is set to 0.
+    * @return The calculated distance in centimeters or error code
+     */
+    uint8_t calculateDistance();
+
+    /**
+     * Resets the distance to designate the beginning of a new one.
+     * @return The previous value of the distance
+     */
+    uint8_t resetDistance();
+
+    /**
+     * Returns the already calculated distance in cm.
+     * It should be used in an ISR to quickly return a value in conjuction with
+     * calculateDistance(). In case of a timeout (e.g. ultrasonic beam taking
+     * too long to return) or detection of an invalid value an error code (0)
+     * is returned.
      * @return Distance in centimeters or error code (0)
      */
     uint8_t getDistance();
 private:
-    uint8_t mTriggerPin, mEchoPin;
+    uint8_t mTriggerPin, mEchoPin, mDistance;
     unsigned long mTriggerTime, mEchoTime;
 };
 
