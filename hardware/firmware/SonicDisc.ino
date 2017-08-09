@@ -3,7 +3,7 @@
 #include "SonicSensor.h"
 
 const uint8_t NUM_OF_SENSORS = 8; // The number of sonic sensors on the disc
-const uint8_t I2C_PACKET_SIZE = 9; // The size of each I2C transmission in bytes
+const uint8_t I2C_PACKET_SIZE = NUM_OF_SENSORS + 1; // The size of each I2C transmission in bytes
 const uint8_t SONIC_DISC_I2C_ADDRESS = 0x09; // The address to assume as an I2C slave
 // The pin to trigger an interrupt signal on the master MCU
 // to indicate that a measurement is ready to be transmitted.
@@ -15,6 +15,8 @@ const uint8_t LED_PIN = 1; // Note that this is also the TX pin
 const unsigned long MEASUREMENT_INTERVAL = 10;
 // The time (in milliseconds) that the last measurement took place
 unsigned long previousMeasurement = 0;
+volatile bool newDataToSend = false; // Flag indicating a new I2C packet
+
 // Sonic Disc's operational states
 enum State {
     STANDBY, // MCU and sensors are on but no measurements are being made
@@ -162,7 +164,7 @@ void setupChangeInterrupt(uint8_t pin) {
  *
  * Error code values:   NO_ERROR                | No error
  *                      INCOMPLETE_MEASUREMENT  | Incomplete measurement
- *                      STANDBY                 | In standby state
+ *                      IN_STANDBY              | In standby state
  *
  * Sensor values:       0       | Error in measurement (e.g. ping timeout)
  *                      1       | TBD
@@ -170,9 +172,24 @@ void setupChangeInterrupt(uint8_t pin) {
  */
 void handleRequests() {
     uint8_t packet[I2C_PACKET_SIZE] = {0};
-    //TO-DO: Compose packet to be sent
+
+    // Determine the error code
+    if (currentState == STANDBY) {
+        packet[0] = IN_STANDBY;
+    } else if (!newDataToSend) {
+        packet[0] = INCOMPLETE_MEASUREMENT;
+    } else {
+        packet[0] = NO_ERROR;
+    }
+
+    // Populate the packet with ultrasonic distances
+    for (int i = 0, j = 1; i < NUM_OF_SENSORS && j < I2C_PACKET_SIZE; i++, j++) {
+        packet[j] = sensors[i].getDistance();
+    }
+
     // Send packet via I2C
     Wire.write(packet, I2C_PACKET_SIZE);
+    newDataToSend = false;
 }
 
 /**
@@ -297,7 +314,12 @@ void loop() {
                     sensors[i].calculateDistance();
                 }
                 // Signal that we have a new set of measurements
+                noInterrupts();             // Begin critical section
+                // Make sure that no interrupts (i.e. I2C) occur between setting
+                // the master's interrupt pin HIGH and raising the new data flag.
                 digitalWrite(INT_PIN, HIGH);
+                newDataToSend = true;
+                interrupts();               // End critical section
             }
             break;
         default:
