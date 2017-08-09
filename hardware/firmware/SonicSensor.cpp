@@ -3,7 +3,7 @@
 SonicSensor::SonicSensor(uint8_t triggerPin, uint8_t echoPin) {
     mTriggerPin = triggerPin;
     mEchoPin = echoPin;
-    mTriggerTime = 0;
+    mStartOfPulse = 0;
     mDistance = 0;
 }
 
@@ -15,24 +15,24 @@ uint8_t SonicSensor::getEchoPin() {
   return mEchoPin;
 }
 
-unsigned long SonicSensor::setStartTime(unsigned long microseconds) {
-    unsigned long previousTrigger = mTriggerTime;
-    mTriggerTime = microseconds;
-    return previousTrigger;
+unsigned long SonicSensor::setStartOfPulse(unsigned long microseconds) {
+    unsigned long previousStart = mStartOfPulse;
+    mStartOfPulse = microseconds;
+    return previousStart;
 }
 
-unsigned long SonicSensor::getStartTime() {
-    return mTriggerTime;
+unsigned long SonicSensor::getStartOfPulse() {
+    return mStartOfPulse;
 }
 
-unsigned long SonicSensor::setFinishTime(unsigned long microseconds) {
-    unsigned long previousEcho = mEchoTime;
-    mEchoTime = microseconds;
-    return previousEcho;
+unsigned long SonicSensor::setEndOfPulse(unsigned long microseconds) {
+    unsigned long previousEnd = mEndOfPulse;
+    mEndOfPulse = microseconds;
+    return previousEnd;
 }
 
-unsigned long SonicSensor::getFinishTime() {
-    return mEchoTime;
+unsigned long SonicSensor::getEndOfPulse() {
+    return mEndOfPulse;
 }
 
 uint8_t SonicSensor::calculateDistance() {
@@ -40,8 +40,8 @@ uint8_t SonicSensor::calculateDistance() {
     // the ultrasonic beam has not yet returned
     // and the echo value (if any) is remnant of
     // a previous measurement.
-    if (mEchoTimeNonVolatile < mTriggerTime) return 0;
-    unsigned long pulseWidth = mEchoTimeNonVolatile - mTriggerTime;
+    if (mEndOfPulseNonVolatile < mStartOfPulseNonVolatile) return 0;
+    unsigned long pulseWidth = mEndOfPulseNonVolatile - mStartOfPulse;
     // Accordig to the HC-SR04 datasheet (https://goo.gl/b22dp3)
     // the formula to calculate the distance in centimeters is:
     // cm = uS / 58
@@ -51,11 +51,13 @@ uint8_t SonicSensor::calculateDistance() {
 }
 
 void SonicSensor::prepareToCalculate() {
-    mEchoTimeNonVolatile = mEchoTime;
+    mEndOfPulseNonVolatile = mEndOfPulse;
+    mStartOfPulseNonVolatile = mStartOfPulse;
 }
 
-void SonicSensor::resetEcho() {
-    mEchoTime = 0;
+void SonicSensor::reset() {
+    mEndOfPulse = 0;
+    mStartOfPulse = 0;
 }
 
 uint8_t SonicSensor::getDistance() {

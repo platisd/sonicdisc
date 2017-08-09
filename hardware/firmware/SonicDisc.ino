@@ -52,21 +52,30 @@ SonicSensor sensors[NUM_OF_SENSORS] = {
 /**
  * Handles the echo signal from an ultrasonic sensor.
  * To be called from within an interrupt, it checks all the echo
- * pins to see if any of them is HIGH and updates the echo time
- * of the respective sensor. If an echo time has already been
- * set, then the new value is ignored.
+ * pins to see if any of them is HIGH or LOW and updates the echo
+ * pulse times of the respective sensor.
+ * If a pulse has already been set, then the new value is ignored.
  */
 void handleEcho() {
     // Go through the sensors' echo pins
     for (int i = 0; i < NUM_OF_SENSORS; i++) {
-        // If a pin is HIGH, it means that a pulse is underway
+        // If a pin is HIGH, it means that a pulse
+        // is either just starting or has previously started.
+        // We only care about the former.
         if (digitalRead(sensors[i].getEchoPin()) == HIGH) {
             // We only care for newly generated pulses and not ones
             // we have handled before.
-            if (sensors[i].getFinishTime() == 0) {
-                sensors[i].setFinishTime(micros());
+            if (sensors[i].getStartOfPulse() == 0) {
+                sensors[i].setStartOfPulse(micros());
             }
-            break;
+        } else {
+            // If a pin is LOW, it means that a pulse has just ended,
+            // has already ended or not started. We only care about
+            // the first case. We can determine this by pulses which
+            // we have not handled before AND that have already started
+            if (sensors[i].getEndOfPulse() == 0 && sensors[i].getStartOfPulse() != 0) {
+                sensors[i].setEndOfPulse(micros());
+            }
         }
     }
 }
@@ -250,17 +259,11 @@ void loop() {
                 // First reset previous the echoes so the interrupts can update
                 // them again.
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
-                    sensors[i].resetEcho();
+                    sensors[i].reset();
                 }
                 // Trigger all sensors at once
                 triggerSensors();
                 interrupts(); // End critical section
-
-                // Designate the start of a new measurement for each sensor
-                unsigned long startOfMeasurement = micros();
-                for (int i = 0; i < NUM_OF_SENSORS; i++) {
-                    sensors[i].setStartTime(startOfMeasurement);
-                }
             }
             break;
         default:

@@ -25,33 +25,30 @@ public:
     uint8_t getEchoPin();
 
     /**
-     * Sets the trigger time of the ultrasonic sensor. Called when
-     * a measurement begins.
-     * @param  microseconds The time (in microseconds) the sensor was triggered
-     * @return              The already existing trigger time
+     * Sets the time that a beginning of an echo pulse was received.
+     * @param  microseconds The time (in microseconds) the pulse started
+     * @return              The already existing time
      */
-    unsigned long setStartTime(unsigned long microseconds);
+    unsigned long setStartOfPulse(unsigned long microseconds);
 
     /**
-     * Gets the time that this sensor was triggered and the measurement started.
-     * @return the time (in microseconds) that this sensor was triggered
+     * Gets the time that the pulse started.
+     * @return the time (in microseconds) the pulse started
      */
-    unsigned long getStartTime();
+    unsigned long getStartOfPulse();
 
     /**
-     * Sets the echo time of the ultrasonic sensor. Called when
-     * the measurement finishes.
-     * @param  microseconds The time (in microseconds) the sensor got an echo
-     * @return              The already existing echo time
+     * Sets the time that an end of an echo pulse was detected.
+     * @param  microseconds The time (in microseconds) the echo pulse ended
+     * @return              The already existing end time
      */
-    unsigned long setFinishTime(unsigned long microseconds);
+    unsigned long setEndOfPulse(unsigned long microseconds);
 
     /**
-     * Gets the time that this sensor received an echo and
-     * the measurement finished.
-     * @return the time (in microseconds) that this sensor received an echo
+     * Gets the time that an end of an echo pulse was detected.
+     * @return the time (in microseconds) the echo pulse ended
      */
-    unsigned long getFinishTime();
+    unsigned long getEndOfPulse();
 
     /**
      * Creates a copy of the (volatile) echo value so to calculate
@@ -73,13 +70,14 @@ public:
     uint8_t calculateDistance();
 
     /**
-     * Resets the echo to designate the beginning of a new measurement.
+     * Resets the beginning and end of pulse times to designate the beginning
+     * of a new measurement.
      * Since the echo time is set by an interrupt, this function should
      * be contained inside a critical section with interrupts disabled.
      * It also should be called before initiating a new interrupt-based
      * measurement.
      */
-    void resetEcho();
+    void reset();
 
     /**
      * Returns the already calculated distance in cm.
@@ -92,8 +90,8 @@ public:
     uint8_t getDistance();
 private:
     uint8_t mTriggerPin, mEchoPin, mDistance;
-    unsigned long mTriggerTime, mEchoTimeNonVolatile;
-    volatile unsigned long mEchoTime;
+    unsigned long mStartOfPulseNonVolatile, mEndOfPulseNonVolatile;
+    volatile unsigned long mStartOfPulse, mEndOfPulse;
 };
 
 #endif
