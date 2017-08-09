@@ -170,6 +170,7 @@ void setupChangeInterrupt(uint8_t pin) {
  */
 void handleRequests() {
     uint8_t packet[I2C_PACKET_SIZE] = {0};
+    //TO-DO: Compose packet to be sent
     // Send packet via I2C
     Wire.write(packet, I2C_PACKET_SIZE);
 }
@@ -269,14 +270,24 @@ void loop() {
             break;
         case MEASURING:
             if (isTimeToMeasure(millis())) {
-                // Disable interrupts while we prepare to calculate
-                // the distances to be certain that each set of measurements
-                // corresponds to the same point in time.
-                noInterrupts(); // Begin critical section
+                // Disable the interrupts so we can prepare to calculate
+                // the distances and then we are ready to start a new
+                // set of measurements.
+                noInterrupts();             // Begin critical section
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    // Copy the (volatile) start and end times of the pulses
+                    // so that we can begin immediately measuring again,
+                    // while distances of the (now previous) measurements are
+                    // being calculated.
                     sensors[i].prepareToCalculate();
+                    // Then reset previous the echoes so we can
+                    // conduct new measurements
+                    sensors[i].reset();
                 }
-                interrupts(); // End critical section
+                // Finally start a new set of measurements
+                // by triggering all sensors at once
+                triggerSensors();
+                interrupts();               // End critical section
 
                 // Now that we are certain that our measurements are consistent
                 // time-wise, calculate the distance.
@@ -287,17 +298,6 @@ void loop() {
                 }
                 // Signal that we have a new set of measurements
                 digitalWrite(INT_PIN, HIGH);
-
-                // Start a new measurement with critical section for consistency.
-                noInterrupts(); // Begin critical section
-                // First reset previous the echoes so the interrupts can update
-                // them again.
-                for (int i = 0; i < NUM_OF_SENSORS; i++) {
-                    sensors[i].reset();
-                }
-                // Trigger all sensors at once
-                triggerSensors();
-                interrupts(); // End critical section
             }
             break;
         default:
