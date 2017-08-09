@@ -234,26 +234,47 @@ bool isTimeToMeasure(unsigned long currentTime) {
 }
 
 /**
+ * Will set all trigger pins to the specified state at once.
+ * @param signalState LOW
+ *                    HIGH
+ */
+void setTriggerPinsTo(uint8_t signalState) {
+    switch (signalState) {
+        case LOW:
+            PORTB &= B11010110; // Set pins 8, 11, 13 LOW
+            PORTC &= B11110101; // Set pins A1, A3 LOW
+            PORTD &= B01100111; // Set pins D3, D4, D7 LOW
+            break;
+        case HIGH:
+            // Port B handles D8 to D13
+            PORTB |= B00101001; // Set pins 8, 11, 13 HIGH
+            // Port C handles A0 to A5
+            PORTC |= B00001010; // Set pins A1, A3 HIGH
+            // Port D handles D0 to D7
+            PORTD |= B10011000; // Set pins D3, D4, D7 HIGH
+            break;
+        default:
+            break;
+    }
+}
+
+/**
  * Triggers all sensors at once, using port manipulation for less
  * computation cycles. This is done by sending a pulse with a width
  * of 10 microseconds.
  */
 void triggerSensors() {
-    // Set all ultrasonic trigger pins to HIGH at the same time
-    // Port B handles D8 to D13
-    PORTB |= B00101001; // Set pins 8, 11, 13 HIGH
-    // Port C handles A0 to A5
-    PORTC |= B00001010; // Set pins A1, A3 HIGH
-    // Port D handles D0 to D7
-    PORTD |= B10011000; // Set pins D3, D4, D7 HIGH
+    // Briefly set the trigger pins to LOW to get a cleaner signal
+    setTriggerPinsTo(LOW);
+    delayMicroseconds(3);
 
+    // Set all ultrasonic trigger pins to HIGH at the same time
+    setTriggerPinsTo(HIGH);
     // Keep the signal HIGH for 10 microseconds
     delayMicroseconds(10);
 
     // Set the trigger pins back to LOW
-    PORTB &= B11010110; // Set pins 8, 11, 13 LOW
-    PORTC &= B11110101; // Set pins A1, A3 LOW
-    PORTD &= B01100111; // Set pins D3, D4, D7 LOW
+    setTriggerPinsTo(LOW);
 }
 
 /**
