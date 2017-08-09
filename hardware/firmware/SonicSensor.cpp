@@ -4,7 +4,10 @@ SonicSensor::SonicSensor(uint8_t triggerPin, uint8_t echoPin) {
     mTriggerPin = triggerPin;
     mEchoPin = echoPin;
     mStartOfPulse = 0;
+    mEndOfPulse = 0;
     mDistance = 0;
+    mStartOfPulseNonVolatile = 0;
+    mEndOfPulseNonVolatile = 0;
 }
 
 uint8_t SonicSensor::getTriggerPin() {
