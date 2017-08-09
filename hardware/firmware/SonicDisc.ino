@@ -36,6 +36,13 @@ enum I2C_ERROR_CODE {
     INCOMPLETE_MEASUREMENT
 };
 
+// ISR vectors
+enum Vector {
+    VECTOR_0, // PCINT0_vect
+    VECTOR_1, // PCINT1_vect
+    VECTOR_2 // PCINT2_vect
+};
+
 // The Sonic Disc pin mapping of sensors
 // Sonic Sensors are defined as SonicSensor(trigger pin, echo pin)
 SonicSensor sensors[NUM_OF_SENSORS] = {
@@ -55,10 +62,37 @@ SonicSensor sensors[NUM_OF_SENSORS] = {
  * pins to see if any of them is HIGH or LOW and updates the echo
  * pulse times of the respective sensor.
  * If a pulse has already been set, then the new value is ignored.
+ * @param intVector The vector that the interrupt originated from
  */
-void handleEcho() {
-    // Go through the sensors' echo pins
-    for (int i = 0; i < NUM_OF_SENSORS; i++) {
+void handleEcho(Vector intVector) {
+    // Determine which vector the interrupt originated from
+    // so we only check signals from those specific sensors
+    int sensorsInVector[3] = {0}; // We have up to 3 sensors in each vector
+    switch (intVector) {
+        case VECTOR_0:
+            // Ultrasonics 2, 3, 4 are on PCINT0_vect
+            sensorsInVector[0] = 2;
+            sensorsInVector[1] = 3;
+            sensorsInVector[2] = 4;
+            break;
+        case VECTOR_1:
+            // Ultrasonics 0, 1 are on PCINT1_vect
+            sensorsInVector[0] = 0;
+            sensorsInVector[1] = 1;
+            sensorsInVector[2] = 1; // For simplicity
+            break;
+        case VECTOR_2:
+            // Ultrasonics 5, 6, 7 are on PCINT2_vect
+            sensorsInVector[0] = 5;
+            sensorsInVector[1] = 6;
+            sensorsInVector[2] = 7;
+            break;
+        default:
+            break; // We should not be here
+    }
+
+    // Iterate through the specific vector's ultrasonic echo pins
+    for (int i : sensorsInVector) {
         // If a pin is HIGH, it means that a pulse
         // is either just starting or has previously started.
         // We only care about the former.
@@ -85,7 +119,7 @@ void handleEcho() {
  * Pins: D8 to D13
  */
 ISR (PCINT0_vect) {
-    handleEcho();
+    handleEcho(VECTOR_0);
 }
 
 /**
@@ -93,7 +127,7 @@ ISR (PCINT0_vect) {
  * Pins: A0 to A5
  */
 ISR(PCINT1_vect) {
-    handleEcho();
+    handleEcho(VECTOR_1);
 }
 
 /**
@@ -101,7 +135,7 @@ ISR(PCINT1_vect) {
  * Pins: D0 to D7
  */
 ISR (PCINT2_vect) {
-    handleEcho();
+    handleEcho(VECTOR_2);
 }
 
 /**
