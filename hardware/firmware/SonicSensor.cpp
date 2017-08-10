@@ -44,13 +44,21 @@ uint8_t SonicSensor::calculateDistance() {
     // and the echo value (if any) is remnant of
     // a previous measurement.
     if (mEndOfPulseNonVolatile < mStartOfPulseNonVolatile) return 0;
-    unsigned long pulseWidth = mEndOfPulseNonVolatile - mStartOfPulse;
+    unsigned long pulseWidth = mEndOfPulseNonVolatile - mStartOfPulseNonVolatile;
     // Accordig to the HC-SR04 datasheet (https://goo.gl/b22dp3)
     // the formula to calculate the distance in centimeters is:
     // cm = uS / 58
-    uint8_t distance = pulseWidth / 58;
+    unsigned long distance = pulseWidth / 58;
     // According to the datasheet the minimum range is 2 cm
-    return distance < 2 ? 0 : distance;
+    if (distance < 2) {
+        distance = 0; // Set it to 0 to indicate an out of range error
+    } else if (distance > 255) {
+        // Since we want to contain the measurement in an 8-bit byte
+        // We have to constrain the measurements up to 255
+        distance = 255;
+    }
+    mDistance = (uint8_t) distance;
+    return mDistance;
 }
 
 void SonicSensor::prepareToCalculate() {
