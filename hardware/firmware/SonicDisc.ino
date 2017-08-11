@@ -12,7 +12,7 @@ const uint8_t INT_PIN = 0; // Note that this is also the RX pin
 // The pin connected to the on-bard LED for debugging
 const uint8_t LED_PIN = 1; // Note that this is also the TX pin
 // How often the measurements should take place (in milliseconds)
-const unsigned long MEASUREMENT_INTERVAL = 10;
+const unsigned long MEASUREMENT_INTERVAL = 15;
 // The time (in milliseconds) that the last measurement took place
 unsigned long previousMeasurement = 0;
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
@@ -334,11 +334,13 @@ void loop() {
                     // Will also timeout any pending measurements
                     sensors[i].calculateDistance();
                 }
-                // Signal that we have a new set of measurements
+                // Send a short pulse to signal that we have a new set of measurements
                 noInterrupts();             // Begin critical section
                 // Make sure that no interrupts (i.e. I2C) occur between setting
                 // the master's interrupt pin HIGH and raising the new data flag.
                 digitalWrite(INT_PIN, HIGH);
+                delayMicroseconds(3);
+                digitalWrite(INT_PIN, LOW);
                 newDataToSend = true;
                 interrupts();               // End critical section
             }
