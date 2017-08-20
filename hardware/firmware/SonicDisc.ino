@@ -12,7 +12,7 @@ const uint8_t INT_PIN = 0; // Note that this is also the RX pin
 // The pin connected to the on-bard LED for debugging
 const uint8_t LED_PIN = 1; // Note that this is also the TX pin
 // How often the measurements should take place (in milliseconds)
-const unsigned long MEASUREMENT_INTERVAL = 15;
+const unsigned long MEASUREMENT_INTERVAL = 10;
 // The time (in milliseconds) that the last measurement took place
 unsigned long previousMeasurement = 0;
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
