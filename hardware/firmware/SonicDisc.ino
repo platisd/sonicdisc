@@ -13,8 +13,8 @@ const uint8_t INT_PIN = 0; // Note that this is also the RX pin
 const uint8_t LED_PIN = 1; // Note that this is also the TX pin
 // How often the measurements should take place (in milliseconds)
 const unsigned long MEASUREMENT_INTERVAL = 10;
-// The time (in milliseconds) that the last measurement took place
-unsigned long previousMeasurement = 0;
+const unsigned long STANDBY_BLINK_INTERVAL = 2000; // Frequency to blink the onboard LED when in standby
+const unsigned long MEASURING_BLINK_INTERVAL = 100; // Frequency to blink the onboard LED when measuring
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
 
 // Sonic Disc's operational states
@@ -225,6 +225,7 @@ void handleReceipts(int numOfBytes) {
  *                     False otherwise
  */
 bool isTimeToMeasure(unsigned long currentTime) {
+    static unsigned long previousMeasurement = 0;
     bool isGoodTimeToMeasure = false;
     if (currentTime - previousMeasurement >= MEASUREMENT_INTERVAL) {
         isGoodTimeToMeasure = true;
@@ -278,6 +279,35 @@ void triggerSensors() {
 }
 
 /**
+ * Sets the LED blinking frequency depending on the current operational state
+ */
+void blinkToIndicateState() {
+    static unsigned long previousBlink = 0;
+    static bool currentLedState = false;
+
+    // Determine the blinking interval
+    unsigned long blinkInterval = 0;
+    switch (currentState) {
+        case STANDBY:
+            blinkInterval = STANDBY_BLINK_INTERVAL;
+            break;
+        case MEASURING:
+            blinkInterval = MEASURING_BLINK_INTERVAL;
+            break;
+        default:
+            break;
+    }
+
+    // Blink based on the operational state
+    unsigned long currentTime = millis();
+    if (currentTime - previousBlink >= blinkInterval) {
+        previousBlink = currentTime;
+        currentLedState = !currentLedState;
+        digitalWrite(LED_PIN, currentLedState);
+    }
+}
+
+/**
  * Run once on boot or after a reset
  */
 void setup() {
@@ -303,6 +333,7 @@ void setup() {
  * Run continuously after setup()
  */
 void loop() {
+    blinkToIndicateState();
     switch(currentState) {
         case STANDBY:
             break;
