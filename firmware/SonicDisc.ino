@@ -16,6 +16,7 @@ const unsigned long MEASUREMENT_INTERVAL = 10;
 const unsigned long STANDBY_BLINK_INTERVAL = 2000; // Frequency to blink the onboard LED when in standby
 const unsigned long MEASURING_BLINK_INTERVAL = 100; // Frequency to blink the onboard LED when measuring
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
+volatile bool justWentToStandbyMode = false; // Flag to indicate we just transitioned to STANDBY mode
 
 // Sonic Disc's operational states
 enum State {
@@ -67,6 +68,8 @@ SonicSensor sensors[NUM_OF_SENSORS] = {
  * @param intVector The vector that the interrupt originated from
  */
 void handleEcho(Vector intVector) {
+    // We only care for interrupt signals while in measuring mode
+    if (currentState != MEASURING) return;
     // Determine which vector the interrupt originated from
     // so we only check signals from those specific sensors
     int sensorsInVector[3] = {0}; // We have up to 3 sensors in each vector
@@ -207,6 +210,7 @@ void handleReceipts(int numOfBytes) {
         switch (masterCommand) {
             case STATE_TO_STANDBY:
                 currentState = STANDBY;
+                justWentToStandbyMode = true;
                 break;
             case STATE_TO_MEASURING:
                 currentState = MEASURING;
@@ -336,6 +340,14 @@ void loop() {
     blinkToIndicateState();
     switch(currentState) {
         case STANDBY:
+            // Determine if we just entered standby to reset the sensors
+            if (justWentToStandbyMode) {
+                // Reset the measurements so there are no leftover data
+                for (int i = 0; i < NUM_OF_SENSORS; i++) {
+                    sensors[i].reset();
+                }
+                justWentToStandbyMode = false;
+            }
             break;
         case MEASURING:
             if (isTimeToMeasure(millis())) {
