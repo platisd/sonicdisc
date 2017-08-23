@@ -36,6 +36,7 @@ volatile bool newData = false;
 uint8_t filterIndex = 0;
 uint8_t filterBuffer[MEASUREMENTS_TO_FILTER][NUM_OF_SENSORS] = {0};
 uint8_t filteredMeasurements[NUM_OF_SENSORS] = {0};
+bool newFilteredMeasurements = false;
 
 /**
    Requests an I2C packet from the SonicDisc
@@ -149,17 +150,22 @@ void loop() {
         // For each measurement
         sortMeasurements();
         filterMeasurements();
-
-        // Now that the measurements are filtered, let's print them out
-        for (int i = 0; i < NUM_OF_SENSORS; i++) {
-          Serial.print(" |");
-          Serial.print(filteredMeasurements[i]);
-          Serial.print(" |\t");
-        }
-        Serial.println();
+        // Indicate that the measurements are filtered
+        newFilteredMeasurements = true;
       }
       // Move along the index
       filterIndex = (filterIndex + 1) % MEASUREMENTS_TO_FILTER;
     }
+  }
+
+  if (newFilteredMeasurements) {
+    newFilteredMeasurements = false;
+    // Print the measurements nicely
+    for (int i = 0; i < NUM_OF_SENSORS; i++) {
+      Serial.print(" |");
+      Serial.print(filteredMeasurements[i]);
+      Serial.print(" |\t");
+    }
+    Serial.println();
   }
 }
