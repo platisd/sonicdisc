@@ -16,19 +16,63 @@ SonicDisc is comprised of an Atmega328P microcontroller that triggers all the ul
 As an I2C slave, whenever a new set of measurements is ready to be transmitted, a short pulse is sent over the `INT` pin, prompting the master to request the data. In other words the I2C master reading the data from the SonicDisc, does not have to poll but merely wait for the indicative signal and then make the I2C request. Despite not suggested, it is possible to use SonicDisc without connecting the `INT` pin to an interrupt, however the master will not be able to assure the existence of a new data.
 
 ## How to connect
-**SonicDisc** <----------> **Host MCU**
-
-VCC <------------------> 5V
-
-GND <------------------> GND
-
-SDA <------------------> SDA
-
-SCL <------------------> SCL
-
-INT <------------------> ISR
+| SonicDisc | Host MCU  |
+| :----:    |:----:     |
+| VCC       |  5V       |
+| GND       |  GND      |
+| SDA       |  SDA      |
+| SCL       |  SCL      |
+| INT       |  ISR      |
 
 If you are mounting the SonicDisc on top of an Arduino UNO as a shield, you only have to (optionally but suggested) connect the `INT` signal to an ISR pin.
+
+## I2C protocol
+SonicDisc communicates using the I2C bus as a slave, meaning that it receives data from a master and responds to data requests.
+
+### Address
+SonicDisc's I2C address is currently hardcoded to `0x09`.
+
+### Set operational state
+SonicDisc has two operational states between which you can switch.
+
+| **Action**                    | **Byte to send**  | **Notes**                                   |
+| :-----------:                 |:-------------:    | :----:                                      |
+| Set state to `STANDBY`        | 0x0A              | SonicDisc's initial state                   |
+| Set state to `MEASURING`      | 0x0B              | Set to this state to start the measurements |
+
+**Example:**
+```arduino
+Wire.beginTransmission(0x09);
+Wire.write(0x0B); // Instruct SonicDisc to start measuring
+Wire.endTransmission(0x09);
+```
+### Get data
+SonicDisc responds to I2C requests with packages of `9` bytes that include an error code and sensor measurements. A typical package structure is described below.
+
+| **Byte Index** | **Range** | **Purpose** | **Notes**                                                               |
+| :----:         |:----:   | :----:        | :----:                                                                  |
+| 0              |  0-2    | Error code    | **0**: No error, **1**: Incomplete measurement, **2**: In standby state |
+| 1              |  0-255  | Ultrasonic 0  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 2              |  0-255  | Ultrasonic 1  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 3              |  0-255  | Ultrasonic 2  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 4              |  0-255  | Ultrasonic 3  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 5              |  0-255  | Ultrasonic 4  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 6              |  0-255  | Ultrasonic 5  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 7              |  0-255  | Ultrasonic 6  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+| 8              |  0-255  | Ultrasonic 7  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
+
+**Example:**
+
+```arduino
+const unsigned int PACKET_SIZE = 9;
+unsigned int packet[PACKET_SIZE] = {0};
+unsigned int packetIndex = 0;
+Wire.requestFrom(0x09, PACKET_SIZE);
+while (Wire.available() && packetIndex < PACKET_SIZE) {
+    i2cInput[packetIndex++] = Wire.read();
+}
+// Now the packet[] array holds the incoming data from SonicDisc
+```
 
 ## Build one yourself
 Below you can find the necessary components to build a SonicDisc yourself:
