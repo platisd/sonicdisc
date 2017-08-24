@@ -44,10 +44,10 @@ bool newFilteredMeasurements = false;
    @param  transmissionSize The size/length of the incoming packet
    @return                  Error code contained inside the incoming packet
 */
-I2C_ERROR_CODE requestPacket(uint8_t i2cInput[], const uint8_t transmissionSize) {
+I2C_ERROR_CODE requestPacket(uint8_t i2cInput[], const uint8_t transmissionSize = I2C_PACKET_SIZE) {
   Wire.requestFrom(SONIC_DISC_I2C_ADDRESS, transmissionSize);
   uint8_t packetIndex = 0;
-  while (Wire.available() && packetIndex < 9) {
+  while (Wire.available() && packetIndex < transmissionSize) {
     i2cInput[packetIndex++] = Wire.read();
   }
   return i2cInput[0]; // Return the packet's error code
