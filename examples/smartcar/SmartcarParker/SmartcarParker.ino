@@ -3,8 +3,6 @@
 #include <Smartcar.h>
 
 Car car;
-const int motorSpeed = 80; //80% of the max speed
-const uint8_t distanceThreshold = 25;
 
 const uint8_t SONIC_DISC_I2C_ADDRESS = 0x09;
 const uint8_t NUM_OF_SENSORS = 8; // No. of ultrasonic sensors on SonicDisc
@@ -51,7 +49,7 @@ enum ParkingState {
     SECOND_OBSTACLE,
     REVERSE_RIGHT,
     REVERSE_LEFT,
-    POSITION_FIX,
+    FINAL_POSITION_FIX,
     PARKING_END
 };
 
@@ -151,6 +149,9 @@ void setup() {
   }
   Serial.println("Communication is established and SonicDisc is measuring distances");
   car.begin();
+  car.setSpeed(0);
+  car.setAngle(0);
+  delay(5000);
 }
 
 void loop() {
@@ -180,26 +181,118 @@ void loop() {
 
   if (newFilteredMeasurements) {
     newFilteredMeasurements = false;
+    // Based on the current orientation of the SonicDisc
+    // fetch the measurements we are interested in.
+    uint8_t front = filteredMeasurements[6];
+    uint8_t right = filteredMeasurements[0];
+    uint8_t backLeft = filteredMeasurements[3];
+    uint8_t back = filteredMeasurements[2];
+
+    if (parkingState != PARKING_END) {
+        Serial.print("Front: ");
+        Serial.println(front);
+        Serial.print("Right: ");
+        Serial.println(right);
+        Serial.print("Back right: ");
+        Serial.println(backLeft);
+        Serial.print("Back: ");
+        Serial.println(back);
+    }
 
     switch (parkingState) {
+        static const uint8_t MIN_SIDE_DIST = 20; // In cm
+        static const uint8_t MIN_BACK_LEFT_DIST = 40;
+        static const uint8_t MIN_BACK_DIST = 20;
+        static const uint8_t MIN_FRONT_DIST = 20;
+        static const uint8_t motorSpeed = 40; // Percentage power to motors
+        static const uint8_t FILTER_THRESHOLD = 5;
+        static uint8_t filterCount = 0;
+        
+
         case PARKING_START:
-            break;
+        {
+            Serial.println("STATE: PARKING_START");
+            car.setSpeed(motorSpeed);
+            if (right && right <= MIN_SIDE_DIST && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = FIRST_OBSTACLE;
+                filterCount = 0;
+            }
+        }
+        break;
         case FIRST_OBSTACLE:
-            break;
+        {
+            Serial.println("STATE: FIRST_OBSTACLE");
+            car.setSpeed(motorSpeed);
+            if ((right == 0 || right > MIN_SIDE_DIST) && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = BETWEEN_OBSTACLES;
+                filterCount = 0;
+            }
+        }
+        break;
         case BETWEEN_OBSTACLES:
-            break;
+        {
+            Serial.println("STATE: BETWEEN_OBSTACLES");
+            car.setSpeed(motorSpeed);
+            if (right && right <= MIN_SIDE_DIST  && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = SECOND_OBSTACLE;
+                filterCount = 0;
+            }
+        }
+        break;
         case SECOND_OBSTACLE:
-            break;
+        {
+            Serial.println("STATE: SECOND_OBSTACLE");
+            car.setSpeed(motorSpeed);
+            static const unsigned long OOMPH = 400; // In ms
+            static unsigned long obstacleDetected = millis();
+            unsigned long currentTime = millis();
+            if (currentTime >= obstacleDetected + OOMPH) {
+                parkingState = REVERSE_RIGHT;
+            }
+        }
+        break;
         case REVERSE_RIGHT:
-            break;
+        {
+            Serial.println("STATE: REVERSE_RIGHT");
+            car.setSpeed(-motorSpeed);
+            car.setAngle(80);
+            if (backLeft && backLeft <= MIN_BACK_LEFT_DIST && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = REVERSE_LEFT;
+                filterCount = 0;
+            }
+        }
+        break;
         case REVERSE_LEFT:
-            break;
-        case POSITION_FIX:
-            break;
+        {
+            Serial.println("STATE: REVERSE_LEFT");
+            car.setSpeed(-motorSpeed);
+            car.setAngle(-80);
+            if (back && back <= MIN_BACK_DIST && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = FINAL_POSITION_FIX;
+                filterCount = 0;
+            }
+        }
+        break;
+        case FINAL_POSITION_FIX:
+        {
+            Serial.println("STATE: FINAL_POSITION_FIX");
+            car.setSpeed(motorSpeed);
+            car.setAngle(30);
+            if (front && front <= MIN_FRONT_DIST && (++filterCount > FILTER_THRESHOLD)) {
+                parkingState = PARKING_END;
+                filterCount = 0;
+                Serial.println("STATE: PARKING_END");
+            }
+        }
+        break;
         case PARKING_END:
-            break;
+        {
+            car.setSpeed(0);
+            car.setAngle(0);
+        }
+        break;
         default:
-            break;
+        break;
     }
 
   }
