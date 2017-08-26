@@ -1,14 +1,14 @@
 # SonicDisc
-A 360° ultrasonic scanner that talks over I2C using an Atmega328P and 8 HC-SR04 ultrasonic sensors.
+A 360° ultrasonic scanner that talks over I2C using an Atmega328P and eight HC-SR04 ultrasonic sensors.
 
 ![sonicdisc](http://i.imgur.com/tKw5zAx.jpg)
 
 ## Overview
 SonicDisc is a sensor that allows you to sense your surroundings. It utilizes 8 ultrasound sensors (HC-SR04) placed at 45° angle from each other, that can measure distances from practically every direction. It can be used in hobby-grade automotive applications, e.g. autonomous driving, obstacle detection etc or wherever quickly determining surrounding distances is relevant.
 
-The sensor transmits the collected data over I2C and uses a separate line to signal, with a short pulse, the existence of a new set of measurements. It can be mounted on top of an Arduino UNO or used standalone. Due to the nature of the HC-SR04 sensors, the measurements can be noisy, therefore it is suggested that they are filtered. An example that receives and filters the incoming data can be found in [examples/SonicDiscReader](examples/SonicDiscReader).
+The sensor transmits the collected data over I2C and uses a separate line to signal, with a short pulse, the existence of a new set of measurements. It can be mounted on top of an Arduino UNO or used standalone. Due to the nature of the HC-SR04 sensors, the measurements can be noisy, therefore it is suggested that they are filtered. A basic Arduino example that receives and filters the incoming data can be found in [examples/SonicDiscReader](examples/SonicDiscReader).
 
-You can find the software running on the SonicDisc in [firmware/](firmware/) and the PCB design in Eagle CAD format inside [hardware/](hardware/eagle).
+You can find the software running on the SonicDisc in [firmware/](firmware/), the PCB design in Eagle CAD format inside [hardware/](hardware/eagle) and more sample applications using the SonicDisc in [examples](examples/).
 
 ## How does it work
 SonicDisc is comprised of an Atmega328P microcontroller that triggers all the ultrasound sensors at the same time, receives the echo pulses via pin change interrupts and then proceeds to calculate the detected distances. The use of interrupts, in contrast to how the HC-SR04 sensors are typically utilized, enable us to conduct all measurements at the "same" time which translates into new sets of `8` measurements every `10 milliseconds`.
@@ -40,7 +40,7 @@ SonicDisc has two operational states between which you can switch.
 | Set state to `STANDBY`        | 0x0A              | SonicDisc's initial state                   |
 | Set state to `MEASURING`      | 0x0B              | Set to this state to start the measurements |
 
-**Example:**
+**Arduino example:**
 ```arduino
 Wire.beginTransmission(0x09);
 Wire.write(0x0B); // Instruct SonicDisc to start measuring
@@ -61,7 +61,7 @@ SonicDisc responds to I2C requests with packages of `9` bytes that include an er
 | 7              |  0-255  | Ultrasonic 6  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
 | 8              |  0-255  | Ultrasonic 7  | **0**: Error in measurement, **1**: TBD, **2-255**: Valid distance (cm) |
 
-**Example:**
+**Arduino example:**
 
 ```arduino
 const unsigned int PACKET_SIZE = 9;
