@@ -49,6 +49,8 @@ Wire.endTransmission(0x09);
 ### Get data
 SonicDisc responds to I2C requests with packages of `9` bytes that include an error code and sensor measurements. A typical package structure is described below.
 
+Regarding the error codes, when the first byte is a `0` then everything went well and the trailing measurements are valid. If it is `1`, it means that this set of data has already been transmitted and a measurement is currently under way. You will encounter this if you poll the sensor fast enough, without taking into consideration the `INT` signal which indicates SonicDisc is ready to transmit new data. Finally, `2` designates that the module is in standby state and no measurements are being conducted.
+
 | **Byte Index** | **Range** | **Purpose** | **Notes**                                                               |
 | :----:         |:----:   | :----:        | :----:                                                                  |
 | 0              |  0-2    | Error code    | **0**: No error, **1**: Incomplete measurement, **2**: In standby state |
