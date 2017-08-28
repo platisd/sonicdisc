@@ -10,6 +10,8 @@ The sensor transmits the collected data over I2C and uses a separate line to sig
 
 You can find the software running on the SonicDisc in [firmware/](firmware/), the PCB design in Eagle CAD format inside [hardware/](hardware/eagle) and more sample applications using the SonicDisc in [examples](examples/).
 
+Read the story behind the module at [platis.solutions](https://platis.solutions/blog/2017/08/27/sonicdisc-360-ultrasonic-scanner/).
+
 ## How does it work
 SonicDisc is comprised of an Atmega328P microcontroller that triggers all the ultrasound sensors at the same time, receives the echo pulses via pin change interrupts and then proceeds to calculate the detected distances. The use of interrupts, in contrast to how the HC-SR04 sensors are typically utilized, enable us to conduct all measurements at the "same" time which translates into new sets of `8` measurements every `10 milliseconds`.
 
