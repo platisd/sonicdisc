@@ -81,7 +81,7 @@ while (Wire.available() && packetIndex < PACKET_SIZE) {
 ## Build one yourself
 Below you can find the necessary components to build a SonicDisc yourself:
 
-* [SonicDisc PCB](https://www.pcbway.com/project/shareproject/SonicDisc___A_360__ultrasonic_scanner.html)
+* [SonicDisc PCB](https://www.pcbway.com/project/shareproject/SonicDisc___A_360__ultrasonic_scanner__rev_1_.html)
 * 8 x HC-SR04
 * 1 x Atmega328P-PU
 * 2 x 22pF capacitors
