@@ -8,4 +8,4 @@ Stuff:
 
 **SonDisk_Proc3** - this is a visual display of the outputs from sonicDiskReader_B written in processing3.
 
-**EaglePCB** contains eagle PCB fabrication files
+**Fabrication** contains eagle PCB fabrication files, as well as laser cutter files to make the acrylic holder plate thing.
