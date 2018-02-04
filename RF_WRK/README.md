@@ -1,6 +1,11 @@
 # Richard Version
 
-I wasn't sure how to add this to the inital repo, so i put my stuff in a second folder. if you want to reorganize my stuff into your repo's format, I'll then pull from there.
+*I wasn't sure how to add this to the inital repo, so I put my stuff in this folder so as not to mess up however your stuff is organized.*
 
-## Build one yourself
-Below you can find the necessary components to build a SonicDisc yourself:
+Stuff:
+
+**SonicDiscReader_B** - this is pretty much identical to your original code, except the output is parsed to interact with my processing file
+
+**SonDisk_Proc3** - this is a visual display of the outputs from sonicDiskReader_B written in processing3.
+
+**EaglePCB** contains eagle PCB fabrication files
