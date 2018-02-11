@@ -1,6 +1,9 @@
+
+
+// xy class to hold two floats.
 class xy
 {
-  float x,y;
+  float x, y;
   xy(float _x, float _y)
   {
     x=_x;
@@ -8,10 +11,10 @@ class xy
   }
 } 
 
-
+// ij class to hold two ints.
 class ij
 {
-  int i,j;
+  int i, j;
   ij(int _i, int _j)
   {
     i=_i;
