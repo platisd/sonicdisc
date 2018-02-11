@@ -3,6 +3,7 @@
 // By Richard Firth https://github.com/richardFirth
 
 // location data modules - this holds a location data object which is used by other objects
+
 class LocationData {
   xy Location;
   xy Size;  

@@ -1,3 +1,9 @@
+// SerialConnectorInput_D
+// latest 11Feb18
+// By Richard Firth https://github.com/richardFirth
+// process serial data input to the global variables.
+
+
 
 void serialEvent (Serial myPort) {
   String theInput = myPort.readStringUntil('\n'); //Gets val
