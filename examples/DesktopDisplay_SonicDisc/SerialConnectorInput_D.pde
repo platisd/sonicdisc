@@ -3,8 +3,6 @@
 // By Richard Firth https://github.com/richardFirth
 // process serial data input to the global variables.
 
-
-
 void serialEvent (Serial myPort) {
   String theInput = myPort.readStringUntil('\n'); //Gets val
   if (processInputs(theInput)) displayInputs();

@@ -4,13 +4,19 @@
 
 // processing 3 sketch to output visual display of a sonic disc https://github.com/platisd/sonicdisc
 
-
 import processing.serial.*;
 Serial myPort;
 SerialConnector sc; // Serial connection object
 SonicDisc SD;// SonicDisc object
 
-int sonic0 = 50;int sonic1 = 50;int sonic2 = 50;int sonic3 = 50;int sonic4 = 50;int sonic5 = 50;int sonic6 = 50;int sonic7 = 50; // declare int values to which data will be posted
+int sonic0 = 50;
+int sonic1 = 50;
+int sonic2 = 50;
+int sonic3 = 50;
+int sonic4 = 50;
+int sonic5 = 50;
+int sonic6 = 50;
+int sonic7 = 50; // declare int values to which data will be posted
 
 void setup() {
   size(600, 600);

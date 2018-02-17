@@ -1,10 +1,8 @@
 // SonicDisc
-// latest 11Feb18
-// By Richard Firth https://github.com/richardFirth
-
 /*
+latest 11Feb18
+By Richard Firth https://github.com/richardFirth
 This is a processing3 object that can be copypasted into a sketch to visually display the ouput of a sonicDisc.
- 
 */
 class SonicDisc {
   SonicDisc() {

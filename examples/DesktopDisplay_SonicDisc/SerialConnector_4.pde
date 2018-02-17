@@ -1,25 +1,25 @@
 // SerialConnector_4
-// latest 11Feb18
+// latest 16Feb18
 // By Richard Firth https://github.com/richardFirth
 
 /*
-    This is a processing3 object that can be copypasted into a sketch to help enable easy serial connection.
-     use keys 0 - 9 to select the port to connect to. 
-     
-     Standard stuff to add to sketch
-     ## global variables 
-     SerialConnector sc;
-     
-     ## setup
-     sc = new SerialConnector(this,port);
-     sc.listPorts();
-     
-     ## draw
-     sc.drawToScreen();
-     
-     ## void keyPressed() {
-     sc.KeyInputforConnection(key); 
-     }
+ This is a processing3 object that can be copypasted into a sketch to help enable easy serial connection.
+ use keys 0 - 9 to select the port to connect to. 
+ 
+ Standard stuff to add to sketch
+ ## global variables 
+ SerialConnector sc;
+ 
+ ## setup
+ sc = new SerialConnector(this,port);
+ sc.listPorts();
+ 
+ ## draw
+ sc.drawToScreen();
+ 
+ ## void keyPressed() {
+ sc.KeyInputforConnection(key); 
+ }
  */
 
 class SerialConnector {
@@ -27,9 +27,7 @@ class SerialConnector {
   boolean isConnected;
   String connectionPort;
   int baudRate = 9600;
-
   boolean bufferTillN = true;
-
   PApplet sketchRef;
   Serial portRef;
 
@@ -37,8 +35,8 @@ class SerialConnector {
     sketchRef = skRef;
     portRef = pRef;
   }
-  
-// list the ports in the console. 
+
+  // list the ports in the console. 
   void listPorts() {
     if (Serial.list().length > 0) {
       for (int i = 0; i < Serial.list().length; i++) {
@@ -47,12 +45,12 @@ class SerialConnector {
       }     
       println("Press x to disconnect");
       println("Press r to relist ports");
-      println("Press b to change baud rate - current: " + str(baudRate));
+      println("Baud rate: " + str(baudRate));
     } else {
       println("No COM Ports open");
     }
   }
-// draw the serial connectors UI to the screen 
+  // draw the serial connectors UI to the screen 
   void drawToScreen() {
     fill(255);
     textAlign(LEFT);
@@ -60,7 +58,7 @@ class SerialConnector {
     if (sc.isConnected) {
       text("Connected to " + sc.connectionPort, 5, height-14);
     } else {
-      text("Not connected. see console for connection instructions", 5, height-14);
+      text("Not connected. See console for connection instructions", 5, height-14);
     }
     ConnectionStillValid();
 
@@ -108,7 +106,7 @@ class SerialConnector {
     }
     return false;
   }
-// make a serial connection 
+  // make a serial connection 
   void makeConnection(int portIndex) {
     println(Serial.list().length + "   " + str(portIndex));
 
@@ -130,11 +128,11 @@ class SerialConnector {
       connectionPort = Serial.list()[portIndex];
     }
     catch(Exception e) {
-      System.err.println("counldn't connect");
+      System.err.println("Couldn't connect");
     }
   }
 
-// disconnector serial connection 
+  // disconnector serial connection 
   void disconnect() {
     if (isConnected) {
       portRef.stop(); 
@@ -146,13 +144,9 @@ class SerialConnector {
       delay(300);
     }
   }
-// change baud rate. will add more options later 
-  void changeBaud() {
-    if (baudRate == 9600) {
-      baudRate = 38400;
-    } else if (baudRate == 38400) {
-      baudRate = 9600;
-    }
+  // change baud rate.
+  void changeBaud(int newBaudRate) {
+    baudRate = newBaudRate;
     listPorts();
     delay(650);
   }
@@ -170,6 +164,5 @@ class SerialConnector {
     if (aKey == '9') makeConnection(9);
     if (aKey == 'x') disconnect();
     if (aKey == 'r') listPorts();
-    if (aKey == 'b') changeBaud();
   }
 }
