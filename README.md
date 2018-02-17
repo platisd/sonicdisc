@@ -97,3 +97,6 @@ Below you can find the necessary components to build a SonicDisc yourself:
 * 1 x 10-pin stackable header
 * 2 x 8-pin stackable header
 * 1 x 6-pin stackable header
+
+## Derivative works
+Version that uses Arduino Pro mini and has sensors on single plane -> https://github.com/richardFirth/sonicdisc
