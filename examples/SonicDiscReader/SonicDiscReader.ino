@@ -158,14 +158,15 @@ void loop() {
     }
   }
 
-  if (newFilteredMeasurements) {
+ if (newFilteredMeasurements) {
     newFilteredMeasurements = false;
     // Print the measurements nicely
+    Serial.print("S");
     for (int i = 0; i < NUM_OF_SENSORS; i++) {
-      Serial.print(" |");
+      Serial.print(",");
       Serial.print(filteredMeasurements[i]);
-      Serial.print(" |\t");
     }
-    Serial.println();
+    Serial.println(",");
   }
+  
 }
