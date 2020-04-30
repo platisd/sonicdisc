@@ -353,6 +353,7 @@ void loop() {
             }
             break;
         case MEASURING:
+//            long time1 = millis();
             if (isTimeToMeasure(millis())) {
                 // Disable the interrupts so we can prepare to calculate
                 // the distances and then we are ready to start a new
@@ -375,12 +376,13 @@ void loop() {
 
                 // Now that we are certain that our measurements are consistent
                 // time-wise, calculate the distance.
+                
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
                     // Calculate distance for each sensor.
                     // Will also timeout any pending measurements
                     sensors[i].calculateDistance();
-                    Serial.print(i);
-                    Serial.print(": ");
+//                    Serial.print(i);
+//                    Serial.print(": ");
                     Serial.print(sensors[i].calculateDistance());
                     Serial.print(" ");
                 }
@@ -394,6 +396,9 @@ void loop() {
                 digitalWrite(INT_PIN, LOW);
                 newDataToSend = true;
                 interrupts();               // End critical section
+//                long time2 = millis();
+//                Serial.print("Time for scan: ");
+//                Serial.println(time2-time1);
             }
             break;
         default:
