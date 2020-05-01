@@ -9,14 +9,15 @@ const uint8_t SONIC_DISC_I2C_ADDRESS = 0x09; // The address to assume as an I2C 
 // to indicate that a measurement is ready to be transmitted.
 // It is set HIGH when there are data to be fetched and LOW otherwise.
 const uint8_t INT_PIN = 0; // Note that this is also the RX pin
-// The pin connected to the on-bard LED for debugging
-const uint8_t LED_PIN = 1; // Note that this is also the TX pin
+// The pin connected to the on-board LED for debugging
+const uint8_t LED_PIN = 13; // Note that this is also the TX pin
 // How often the measurements should take place (in milliseconds)
 const unsigned long MEASUREMENT_INTERVAL = 10;
 const unsigned long STANDBY_BLINK_INTERVAL = 2000; // Frequency to blink the onboard LED when in standby
 const unsigned long MEASURING_BLINK_INTERVAL = 100; // Frequency to blink the onboard LED when measuring
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
 volatile bool justWentToStandbyMode = false; // Flag to indicate we just transitioned to STANDBY mode
+int value;
 
 // Sonic Disc's operational states
 enum State {
@@ -315,6 +316,7 @@ void blinkToIndicateState() {
  * Run once on boot or after a reset
  */
 void setup() {
+    Serial.begin(115200);
     // Set up ultrasonic sensor pins
     for (int i = 0; i < NUM_OF_SENSORS; i++){
         // Set up change interrupts for all the echo pins
@@ -331,6 +333,7 @@ void setup() {
     Wire.onRequest(handleRequests);
     // Set up callback for I2C receipts
     Wire.onReceive(handleReceipts);
+    Serial.println("Starting...");
 }
 
 /**
@@ -338,6 +341,7 @@ void setup() {
  */
 void loop() {
     blinkToIndicateState();
+    currentState = MEASURING;
     switch(currentState) {
         case STANDBY:
             // Determine if we just entered standby to reset the sensors
@@ -350,6 +354,7 @@ void loop() {
             }
             break;
         case MEASURING:
+//            long time1 = millis();
             if (isTimeToMeasure(millis())) {
                 // Disable the interrupts so we can prepare to calculate
                 // the distances and then we are ready to start a new
@@ -372,11 +377,21 @@ void loop() {
 
                 // Now that we are certain that our measurements are consistent
                 // time-wise, calculate the distance.
+                
                 for (int i = 0; i < NUM_OF_SENSORS; i++) {
                     // Calculate distance for each sensor.
                     // Will also timeout any pending measurements
                     sensors[i].calculateDistance();
+//                    Serial.print(i);
+//                    Serial.print(": ");
+                    if (sensors[i].calculateDistance() > 90) {value = 0;} else {value = sensors[i].calculateDistance();}  
+                    Serial.print("Sensor");
+                    Serial.print(i+1);
+                    Serial.print(":");
+                    Serial.print(value);
+                    Serial.print(",");
                 }
+                Serial.println(" ");
                 // Send a short pulse to signal that we have a new set of measurements
                 noInterrupts();             // Begin critical section
                 // Make sure that no interrupts (i.e. I2C) occur between setting
@@ -386,6 +401,9 @@ void loop() {
                 digitalWrite(INT_PIN, LOW);
                 newDataToSend = true;
                 interrupts();               // End critical section
+//                long time2 = millis();
+//                Serial.print("Time for scan: ");
+//                Serial.println(time2-time1);
             }
             break;
         default:
