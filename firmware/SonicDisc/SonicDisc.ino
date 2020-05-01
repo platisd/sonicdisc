@@ -17,6 +17,7 @@ const unsigned long STANDBY_BLINK_INTERVAL = 2000; // Frequency to blink the onb
 const unsigned long MEASURING_BLINK_INTERVAL = 100; // Frequency to blink the onboard LED when measuring
 volatile bool newDataToSend = false; // Flag indicating a new I2C packet
 volatile bool justWentToStandbyMode = false; // Flag to indicate we just transitioned to STANDBY mode
+int value;
 
 // Sonic Disc's operational states
 enum State {
@@ -383,8 +384,12 @@ void loop() {
                     sensors[i].calculateDistance();
 //                    Serial.print(i);
 //                    Serial.print(": ");
-                    Serial.print(sensors[i].calculateDistance());
-                    Serial.print(" ");
+                    if (sensors[i].calculateDistance() > 90) {value = 0;} else {value = sensors[i].calculateDistance();}  
+                    Serial.print("Sensor");
+                    Serial.print(i+1);
+                    Serial.print(":");
+                    Serial.print(value);
+                    Serial.print(",");
                 }
                 Serial.println(" ");
                 // Send a short pulse to signal that we have a new set of measurements
